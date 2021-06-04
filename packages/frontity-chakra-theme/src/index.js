@@ -19,7 +19,7 @@ const chakraTheme = {
        * logo : "Frontity"
        * logo: "https://uploads-ssl.webflow.com/5be00771820599586e6bd032/5be0223588110a6dbcac2d05_image.svg",
        */
-      logo: "Frontity",
+      logo: "BillaHomes",
       showBackgroundPattern: true,
       showSocialLinks: true,
       /**
