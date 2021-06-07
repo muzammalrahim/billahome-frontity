@@ -1,17 +1,24 @@
 import { Box, Heading, Button , Center, ButtonGroup, SimpleGrid } from "@chakra-ui/react";
 import { connect } from "frontity";
-import React from "react";
+import React, { useEffect } from "react";
 import { FeaturedPostSection } from "../featured-post/featured-post";
 import { formatPostData, splitPosts } from "../helpers";
 import { Newsletter } from "../newsletter";
 import ArchiveItem from "./archive-item";
 import { PaginationButton } from "./pagination";
 
-const HomepageArchive = ({ state, libraries }) => {
+const HomepageArchive = ({ state, libraries, actions }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
   const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
+
+  let allProperties = '';
+  useEffect( async() => {
+    await actions.source.fetch('/allproperties');
+    allProperties = state.source.get('/allproperties');
+    console.log('allprops: ', allProperties);
+  }, [])
 
   return (
     <Box bg="accent.50" as="section">
@@ -48,21 +55,21 @@ const HomepageArchive = ({ state, libraries }) => {
         <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
           Recently Added Properties
         </Heading>
-        <SimpleGrid
+        {/* <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 4 }}
-          spacing="10px"
+          columns={{ base: 1, md: 3 }}
+          spacing="40px"
         >
           {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
-        </SimpleGrid>
+        </SimpleGrid> */}
 
         <PaginationButton mt="40px" link="/page/2">
           More posts
         </PaginationButton>
-        <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
+        {/* <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
           Real Estate Articles & News
         </Heading>
         <SimpleGrid
@@ -74,7 +81,7 @@ const HomepageArchive = ({ state, libraries }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
-        </SimpleGrid>
+        </SimpleGrid> */}
         <Heading
           as="h4"
           textAlign="center"

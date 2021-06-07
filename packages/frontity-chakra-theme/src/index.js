@@ -2,7 +2,7 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import processors from "./components/styles/processors";
 // import { theme } from "@chakra-ui/react";
-import {getAllProperties } from "./utils/handlers";
+import { getAllProperties, propertiesHandler } from "./utils/handlers";
 
 const before = async ({ libraries, actions, state }) => {
   // We use html2react to process the <img> tags inside the content HTML.
@@ -10,6 +10,7 @@ const before = async ({ libraries, actions, state }) => {
 
   // Add handlers for both /players/ and /players/:name.
   libraries.source.handlers.push(getAllProperties);
+  libraries.source.handlers.push(propertiesHandler);
   
   // libraries.source.handlers.push(myCategoriesHandler);
 
