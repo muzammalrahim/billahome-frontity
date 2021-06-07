@@ -2,7 +2,7 @@ const settings = {
   "name": "home",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
+      "url": "https://billahome.com/",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -34,7 +34,7 @@ const settings = {
             },
             {
               name: 'BUY PROPERTY',
-              link: '/category/nature/'
+              link: '/all-properties/'
             
             },
          
@@ -45,7 +45,7 @@ const settings = {
             },
 			      {
               name: 'BILLAHOME',
-              link: '/tag/japan/',
+              link: '#',
               submenu: [
                 {
                   name: 'AGENTS',
@@ -63,7 +63,7 @@ const settings = {
             },
 			      {
               name: 'BLOGS',
-              link: '/about-us/',
+              link: '/blog/',
               submenu: [
                 {
                   name: 'Retirement Planning',
@@ -85,7 +85,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://billahome.com/"
         }
       }
     },

@@ -143,7 +143,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
             >
                 <div  css={css` 
                              position : relative  ;
-                             padding-top: 10px;
+                             padding: 15px;
                              border-bottom: 1px solid #e6e6e6;
                           } `}
                 >
