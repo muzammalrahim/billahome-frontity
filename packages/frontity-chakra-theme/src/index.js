@@ -21,13 +21,6 @@ const before = async ({ libraries, actions, state }) => {
 };
 
 
-
-const before = async ({ libraries, actions }) => {
-  //libraries.source.handlers.push(menuHandler);
-  // This will wait until the primaryMenu data is fetched.
-  //await actions.source.fetch("primaryMenu");
-};
-
 const chakraTheme = {
   name: "frontity-chakra-theme",
   roots: {

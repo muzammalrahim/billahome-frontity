@@ -50,10 +50,10 @@ const HomepageArchive = ({ state, libraries }) => {
         </Heading>
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 3 }}
-          spacing="40px"
+          columns={{ base: 1, md: 4 }}
+          spacing="10px"
         >
-          {othersPosts.map(({ type, id }) => {
+          {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
