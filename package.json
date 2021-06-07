@@ -18,6 +18,9 @@
   "prettier": {},
   "dependencies": {
     "@frontity/core": "^1.13.0",
+
+    "@chakra-ui/icons": "^1.0.11",
+
     "@frontity/html2react": "^1.7.0",
     "@frontity/tiny-router": "^1.4.2",
     "@frontity/wp-source": "^1.11.5",

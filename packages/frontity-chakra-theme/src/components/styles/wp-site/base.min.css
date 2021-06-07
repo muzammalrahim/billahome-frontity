@@ -1,0 +1,22 @@
+.mmenu a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.15s;
+    font-family: poppins;
+    font-weight: 100;
+}
+.mmenu a:hover {
+    color: #006dcc;
+}
+.innermenu a {
+    color: #333;
+    text-decoration: none;
+    transition: 0.15s;
+}
+.innermenu a:hover {
+    color: #fab93e;
+}
+ul {
+    list-style-type: none;
+
+}
