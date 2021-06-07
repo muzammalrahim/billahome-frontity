@@ -34,7 +34,7 @@ const settings = {
             },
             {
               name: 'BUY PROPERTY',
-              link: '/category/nature/'
+              link: '/all-properties/'
             
             },
          
@@ -45,7 +45,7 @@ const settings = {
             },
 			      {
               name: 'BILLAHOME',
-              link: '/tag/japan/',
+              link: '#',
               submenu: [
                 {
                   name: 'AGENTS',
@@ -63,7 +63,7 @@ const settings = {
             },
 			      {
               name: 'BLOGS',
-              link: '/about-us/',
+              link: '/blog/',
               submenu: [
                 {
                   name: 'Retirement Planning',
