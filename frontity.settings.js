@@ -1,92 +1,97 @@
 const settings = {
-  name: "home",
-  state: {
-    frontity: {
-      url: "https://billahome.com/",
-      title: "Test Frontity Blog",
-      description: "WordPress installation for Frontity development",
-    },
+  "name": "home",
+  "state": {
+    "frontity": {
+      "url": "https://billahome.com/",
+      "title": "Test Frontity Blog",
+      "description": "WordPress installation for Frontity development"
+    }
   },
-  packages: [
+  "packages": [
     {
-      name: "frontity-chakra-theme",
-      state: {
-        theme: {
-          menu: [
+      "name": "frontity-chakra-theme",
+      "state": {
+        "theme": {
+          "menu": [
             {
-              name: "Home",
-              link: "/",
+              name: 'Home',
+              link: '/',
+			      submenu: [
+                {
+                  name: 'ABOUT',
+                  link: '/about/'
+                },
+                {
+                  name: 'CONTACT',
+                  link: '/contact/'
+                },
+                {
+                  name: 'FAQS',
+                  link: '/faqs/'
+                }
+              ]
+			  
+            },
+            {
+              name: 'BUY PROPERTY',
+              link: '/all-properties/'
+            
+            },
+         
+			      {
+              name: 'RENT PROPERTY',
+              link: '/category/travel/',
+             
+            },
+			      {
+              name: 'BILLAHOME',
+              link: '#',
               submenu: [
                 {
-                  name: "ABOUT",
-                  link: "/about/",
+                  name: 'AGENTS',
+                  link: '/agents/'
                 },
                 {
-                  name: "CONTACT",
-                  link: "/contact/",
+                  name: 'AGENCIES',
+                  link: '/agencies/'
                 },
                 {
-                  name: "FAQS",
-                  link: "/faqs/",
-                },
-              ],
+                  name: 'MEMBERSHIP INFO',
+                  link: '/'
+                }
+              ]
             },
-            {
-              name: "BUY PROPERTY",
-              link: "/category/nature/",
-            },
-
-            {
-              name: "RENT PROPERTY",
-              link: "/category/travel/",
-            },
-            {
-              name: "BILLAHOME",
-              link: "/tag/japan/",
+			      {
+              name: 'BLOGS',
+              link: '/blog/',
               submenu: [
                 {
-                  name: "AGENTS",
-                  link: "/agents/",
+                  name: 'Retirement Planning',
+                  link: '/category/retirement/retirement-planning/'
                 },
-                {
-                  name: "AGENCIES",
-                  link: "/agencies/",
-                },
-                {
-                  name: "MEMBERSHIP INFO",
-                  link: "/",
-                },
-              ],
-            },
-            {
-              name: "BLOGS",
-              link: "/about-us/",
-              submenu: [
-                {
-                  name: "Retirement Planning",
-                  link: "/category/retirement/retirement-planning/",
-                },
-              ],
-            },
+              
+              ]
+            }
+      
           ],
-          featured: {
-            showOnList: false,
-            showOnPost: false,
-          },
-        },
-      },
+          "featured": {
+            "showOnList": false,
+            "showOnPost": false
+          }
+        }
+      }
     },
     {
-      name: "@frontity/wp-source",
-      state: {
-        source: {
-          url: "https://billahome.com/",
-        },
-      },
+      "name": "@frontity/wp-source",
+      "state": {
+        "source": {
+          "url": "https://billahome.com/"
+        }
+      }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react",
-  ],
+    "@frontity/html2react"
+  ]
 };
 
 export default settings;

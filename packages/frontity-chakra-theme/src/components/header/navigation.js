@@ -62,7 +62,7 @@ export const SiteMenu = props => (
     listStyleType="none"
     align="center"
     direction="row"
-    color="white"
+    color="red"
     {...props}
   />
 );
@@ -72,7 +72,7 @@ export const SiteMenu = props => (
 const SiteMenuItem = ({ link, ...props }) => (
   <Box
     as="li"
-    color="white"
+    color="green"
     fontSize={{ base: "sm", lg: "md" }}
     fontWeight="medium"
     fontFamily="Kelson"
@@ -90,7 +90,7 @@ const SiteMenuItem = ({ link, ...props }) => (
 const SiteMenuItem2 = ({ link, ...props }) => (
   <Box
     as="li"
-    color="white"
+    color="yellow"
     fontSize={"12px"}
     fontWeight="medium"
     fontFamily="Kelson"
@@ -142,7 +142,9 @@ const Navigation = ({ menu,state,actions,...props }) =>
             
             >
                 <div  css={css` 
-                             position : relative  
+                             position : relative  ;
+                             padding: 15px;
+                             border-bottom: 1px solid #e6e6e6;
                           } `}
                 >
                 {name} 
@@ -177,9 +179,10 @@ border-top: 4px solid #ffffff;
 const MenuItem2 = styled.div`
 position: absolute;
         top: 46px;
-        background: #1f2024;;
+        background: white;
+        color:red;
         width:230px;
-        visibility: visible
+        visibility: visible;
 `;
 
 
