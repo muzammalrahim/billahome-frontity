@@ -18,6 +18,7 @@ const before = async ({ libraries, actions, state }) => {
   // libraries.source.handlers.push(myCategoriesHandler);
 
   // Fetch.
+    // await actions.source.fetch("/wp-json/wp/v2/menus");
   // await actions.source.fetch("wp-json/wp/v2/menus/");
   // await actions.source.fetch("/menus");
 
