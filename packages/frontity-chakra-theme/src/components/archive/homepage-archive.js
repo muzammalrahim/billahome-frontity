@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, Button , Center, ButtonGroup, SimpleGrid } from "@chakra-ui/react";
 import { connect } from "frontity";
 import React from "react";
 import { FeaturedPostSection } from "../featured-post/featured-post";
@@ -25,18 +25,25 @@ const HomepageArchive = ({ state, libraries }) => {
         maxWidth="1200px"
         mx="auto"
       >
-        <Heading
-          textTransform="uppercase"
+        
+       <Heading  textAlign="center"> Welcome To BillaHome For Home Owners Around The World!</Heading>
+<Center textAlign="center">For sale properties, vacation homes, short & long term rental properties, apartment, guest houses and home stay properties, list it all here! Welcome home owners, real estate brokers and property managers.</Center>
+
+<Heading  textAlign="center">Save Huge Listing and Membership Fees With Us</Heading>
+<Center textAlign="center">Free unlimited listings and membership!</Center>
+<Center>
+<Button colorScheme="yellow" >
+    Let's Get Started
+  </Button></Center>
+<Heading
           textAlign="center"
           fontSize={{ base: "4xl", md: "6xl" }}
-          color="accent.400"
         >
-          Latest Posts
+          Recently Added Properties
         </Heading>
-
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 2 }}
+          columns={{ base: 1, md: 3 }}
           spacing="40px"
         >
           {othersPosts.map(({ type, id }) => {
@@ -48,6 +55,39 @@ const HomepageArchive = ({ state, libraries }) => {
         <PaginationButton mt="40px" link="/page/2">
           More posts
         </PaginationButton>
+        <Heading
+          textAlign="center"
+          fontSize={{ base: "4xl", md: "6xl" }}
+        >
+          Real Estate Articles & News
+        </Heading>
+        <SimpleGrid
+          mt={{ base: "64px", md: "80px" }}
+          columns={{ base: 1, md: 3 }}
+          spacing="40px"
+        >
+          {othersPosts.map(({ type, id }) => {
+            const item = state.source[type][id];
+            return <ArchiveItem key={item.id} item={item} />;
+          })}
+        </SimpleGrid>
+        <Heading
+            as="h4"
+          textAlign="center"
+          fontSize={{ base: "4xl", md: "6xl" }}
+        >
+          Real Estate Articles & News
+        </Heading>
+        <SimpleGrid
+          mt={{ base: "64px", md: "80px" }}
+          columns={{ base: 1, md: 3 }}
+          spacing="40px"
+        >
+          {othersPosts.map(({ type, id }) => {
+            const item = state.source[type][id];
+            return <ArchiveItem key={item.id} item={item} />;
+          })}
+        </SimpleGrid>
       </Box>
       {libraries.newsletter && (
         <Newsletter showPattern={state.theme.showBackgroundPattern} />
