@@ -13,26 +13,66 @@ const settings = {
       "state": {
         "theme": {
           "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "Nature",
-              "/category/nature/"
-            ],
-            [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
+            {
+              name: 'Home',
+              link: '/',
+			      submenu: [
+                {
+                  name: 'ABOUT',
+                  link: '/about/'
+                },
+                {
+                  name: 'CONTACT',
+                  link: '/contact/'
+                },
+                {
+                  name: 'FAQS',
+                  link: '/faqs/'
+                }
+              ]
+			  
+            },
+            {
+              name: 'BUY PROPERTY',
+              link: '/category/nature/'
+            
+            },
+         
+			      {
+              name: 'RENT PROPERTY',
+              link: '/category/travel/',
+             
+            },
+			      {
+              name: 'BILLAHOME',
+              link: '/tag/japan/',
+              submenu: [
+                {
+                  name: 'AGENTS',
+                  link: '/agents/'
+                },
+                {
+                  name: 'AGENCIES',
+                  link: '/agencies/'
+                },
+                {
+                  name: 'MEMBERSHIP INFO',
+                  link: '/'
+                }
+              ]
+            },
+			      {
+              name: 'BLOGS',
+              link: '/about-us/',
+              submenu: [
+                {
+                  name: 'Retirement Planning',
+                  link: '/category/retirement/retirement-planning/'
+                },
+              
+              ]
+            }
+      
           ],
           "featured": {
             "showOnList": false,
