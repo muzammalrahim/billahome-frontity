@@ -16,7 +16,7 @@ const HomepageArchive = ({ state, libraries }) => {
   return (
     <Box bg="accent.50" as="section">
       <FeaturedPostSection
-        data={firstThreePosts.map(post => formatPostData(state, post))}
+        data={firstThreePosts.map((post) => formatPostData(state, post))}
       />
       <Box
         py={{ base: "64px", md: "80px" }}
@@ -25,20 +25,27 @@ const HomepageArchive = ({ state, libraries }) => {
         maxWidth="1200px"
         mx="auto"
       >
-        
-       <Heading  textAlign="center"> Welcome To BillaHome For Home Owners Around The World!</Heading>
-<Center textAlign="center">For sale properties, vacation homes, short & long term rental properties, apartment, guest houses and home stay properties, list it all here! Welcome home owners, real estate brokers and property managers.</Center>
+        <Heading textAlign="center">
+          {" "}
+          Welcome To BillaHome For Home Owners Around The World!
+        </Heading>
+        <Center textAlign="center">
+          For sale properties, vacation homes, short & long term rental
+          properties, apartment, guest houses and home stay properties, list it
+          all here! Welcome home owners, real estate brokers and property
+          managers.
+        </Center>
 
-<Heading  textAlign="center">Save Huge Listing and Membership Fees With Us</Heading>
-<Center textAlign="center">Free unlimited listings and membership!</Center>
-<Center>
-<Button colorScheme="yellow" >
-    Let's Get Started
-  </Button></Center>
-<Heading
-          textAlign="center"
-          fontSize={{ base: "4xl", md: "6xl" }}
-        >
+        <Heading textAlign="center">
+          Save Huge Listing and Membership Fees With Us
+        </Heading>
+        <Center textAlign="center">
+          Free unlimited listings and membership!
+        </Center>
+        <Center>
+          <Button colorScheme="yellow">Let's Get Started</Button>
+        </Center>
+        <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
           Recently Added Properties
         </Heading>
         <SimpleGrid
@@ -55,24 +62,21 @@ const HomepageArchive = ({ state, libraries }) => {
         <PaginationButton mt="40px" link="/page/2">
           More posts
         </PaginationButton>
-        <Heading
-          textAlign="center"
-          fontSize={{ base: "4xl", md: "6xl" }}
-        >
+        <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
           Real Estate Articles & News
         </Heading>
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 3 }}
-          spacing="40px"
+          columns={{ base: 1, md: 4 }}
+          // spacing="40px"
         >
-          {othersPosts.map(({ type, id }) => {
+          {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
         </SimpleGrid>
         <Heading
-            as="h4"
+          as="h4"
           textAlign="center"
           fontSize={{ base: "4xl", md: "6xl" }}
         >
@@ -80,10 +84,10 @@ const HomepageArchive = ({ state, libraries }) => {
         </Heading>
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 3 }}
-          spacing="40px"
+          columns={{ base: 1, md: 4 }}
+          spacing="10px"
         >
-          {othersPosts.map(({ type, id }) => {
+          {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
