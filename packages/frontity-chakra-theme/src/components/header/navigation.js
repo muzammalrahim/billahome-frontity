@@ -110,11 +110,11 @@ const SiteMenuItem2 = ({ link, ...props }) => (
 const Navigation = ({ menu,state,actions,...props }) =>
 {
   
-  const mainMenuList = state.source.get("menus/92/").items;
-
-  {mainMenuList.map(({link}) => (
-                  console.log("boom",link)
-  ))}
+  // const mainMenuList = state.source.get("menus/92/").items;
+// 
+  // {mainMenuList?.map(({link}) => (
+                  // console.log("boom",link)
+  // ))}
 
   return(
   
