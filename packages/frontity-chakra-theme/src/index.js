@@ -10,15 +10,14 @@ const before = async ({ libraries, actions, state }) => {
   // We use html2react to process the <img> tags inside the content HTML.
   // libraries.html2react.processors.push(image);
 
-
-
   // Add handlers for both /players/ and /players/:name.
   libraries.source.handlers.push(menuHandler);
   
   // libraries.source.handlers.push(myCategoriesHandler);
 
   // Fetch.
-    // await actions.source.fetch("/wp-json/wp/v2/menus");
+    await actions.source.fetch("menus/92");
+    console.log('menu items: ', state.source.get('menus/92'))
   // await actions.source.fetch("wp-json/wp/v2/menus/");
   // await actions.source.fetch("/menus");
 
@@ -98,9 +97,9 @@ const chakraTheme = {
   // Frontity like libraries.
   actions: {
     theme: {
-      beforeSSR: async ({ state, actions }) => {
-        await actions.source.fetch(`/menu/${state.theme.menuUrl}/`);
-      },
+      // beforeSSR: async ({ state, actions }) => {
+        // await actions.source.fetch(`/menu/${state.theme.menuUrl}/`);
+      // },
       showSubmenu: ({ state }) => {
         // state.theme.subMenu = !state.theme.subMenu;
         state.theme.subMenu = true;
@@ -138,19 +137,17 @@ const chakraTheme = {
       closeSearchModal: ({ state }) => {
         state.theme.isSearchModalOpen = false;
       },
+      beforeSSR: before,
+      beforeCSR: before,
     },
-    beforeSSR: before,
-    beforeCSR: before,
+    
   },
   libraries: {
     html2react: {
       // Add a processor to html2react so it processes the <img> tags
       // inside the content HTML. You can add your own processors too.
       processors: [image, ...processors],
-    },
-    source: {
-      handlers: [menuHandler],
-    },
+    }
   },
 };
 
