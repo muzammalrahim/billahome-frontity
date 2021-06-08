@@ -110,6 +110,12 @@ const SiteMenuItem2 = ({ link, ...props }) => (
 const Navigation = ({ menu,state,actions,...props }) =>
 {
   
+  const mainMenuList = state.source.get("menus/92/").items;
+
+  {mainMenuList.map(({link}) => (
+                  console.log("boom",link)
+  ))}
+
   return(
   
   <Box as="nav" width="100%" position="absolute" display={{ base: "none", lg: "block" }} {...props}>

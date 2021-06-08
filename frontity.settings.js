@@ -1,11 +1,13 @@
 const settings = {
-  name: "home",
-  state: {
-    frontity: {
-      url: "http://72.167.39.69/",
-      title: "Test Frontity Blog",
-      description: "WordPress installation for Frontity development",
-    },
+
+  "name": "home",
+  "state": {
+    "frontity": {
+      "url": "http://billahomes.com",
+      "title": "Test Frontity Blog",
+      "description": "WordPress installation for Frontity development"
+    }
+
   },
   packages: [
     {
@@ -77,18 +79,14 @@ const settings = {
       },
     },
     {
-      name: "@frontity/wp-source",
-      state: {
-        source: {
-          api: "http://72.167.39.69/wp-json/",
-          postTypes: [
-            {
-              type: "property", // type slug
-              endpoint: "property", // REST API endpoint
-            },
-          ],
-        },
-      },
+
+      "name": "@frontity/wp-source",
+      "state": {
+        "source": {
+          "url": "http://billahomes.com"
+        }
+      }
+
     },
     "@frontity/tiny-router",
     "@frontity/html2react",
