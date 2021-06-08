@@ -83,7 +83,13 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://billahomes.com"
+          "url": "http://billahomes.com",
+          "postTypes": [
+            {
+              type: "property", // type slug
+              endpoint: "properties", // REST API endpoint
+            }
+          ],
         }
       }
 

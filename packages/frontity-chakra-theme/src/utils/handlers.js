@@ -35,19 +35,19 @@ export const menuHandler = {
 };
 
 
-const propertiesHandler = {
+export const propertiesHandler = {
   name: "properties",
-  priority: 10,
-  pattern: "/allproperties",
+  priority: 18,
+  pattern: "/latest-properties/:per_page",
   func: async ({ route, params, state, libraries }) => {
     const { api } = libraries.source;
     const { id } = params;
 
     // 1. fetch the data you want from the endpoint page
     const response = await api.get({
-      endpoint: "property",
+      endpoint: "properties",
       params: {
-        per_page: params.page ? params.page : 5, // To make sure we get all elements
+        per_page: params.per_page ? params.per_page : 6, // To make sure we get all elements
         _embed: true,
       },
     });

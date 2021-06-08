@@ -3,9 +3,9 @@ import image from "@frontity/html2react/processors/image";
 import processors from "./components/styles/processors";
 // import { theme } from "@chakra-ui/react";
 
-import {menuHandler} from "./utils/handlers";
+// import {menuHandler} from "./utils/handlers";
 
-import { getAllProperties, propertiesHandler } from "./utils/handlers";
+import { propertiesHandler } from "./utils/handlers";
 
 
 const before = async ({ libraries, actions, state }) => {
@@ -14,19 +14,18 @@ const before = async ({ libraries, actions, state }) => {
 
   // Add handlers for both /players/ and /players/:name.
 
-  libraries.source.handlers.push(menuHandler);
-  libraries.source.handlers.push(getAllProperties);
+  // libraries.source.handlers.push(menuHandler);
+  // libraries.source.handlers.push(getAllProperties);
   libraries.source.handlers.push(propertiesHandler);
 
   
   // libraries.source.handlers.push(myCategoriesHandler);
 
   // Fetch.
-    await actions.source.fetch("menus/92");
-    console.log('menu items: ', state.source.get('menus/92'))
+  //   await actions.source.fetch("menus/92");
+    // console.log('menu items: ', state.source.get('menus/92'))
   // await actions.source.fetch("wp-json/wp/v2/menus/");
   // await actions.source.fetch("/menus");
-
 };
 
 
