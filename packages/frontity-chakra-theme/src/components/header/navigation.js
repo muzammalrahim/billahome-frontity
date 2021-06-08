@@ -110,6 +110,24 @@ const SiteMenuItem2 = ({ link, ...props }) => (
 const Navigation = ({ menu,state,actions,...props }) =>
 {
   
+  const items = state.source.get(`/menu/92/`).items;
+
+
+
+  {items?.map((item) => {
+    console.log("taimoor",item)
+    if (!item.child_items) {
+      return (
+       <div></div>
+      );
+    } else {
+      const childItems = item.child_items;
+      return (
+        <div></div>
+      );
+    }
+  })}
+
   // const mainMenuList = state.source.get("menus/92/").items;
 // 
   // {mainMenuList?.map(({link}) => (

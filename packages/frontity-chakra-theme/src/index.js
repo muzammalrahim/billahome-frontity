@@ -2,8 +2,10 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import processors from "./components/styles/processors";
 // import { theme } from "@chakra-ui/react";
+
 import {menuHandler} from "./utils/handlers";
 
+import { getAllProperties, propertiesHandler } from "./utils/handlers";
 
 const chakraTheme = {
   name: "frontity-chakra-theme",
