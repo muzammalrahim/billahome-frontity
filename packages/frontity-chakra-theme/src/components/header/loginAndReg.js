@@ -14,7 +14,7 @@ const LoginAndReg = props => (
          <a href="#" data-toggle="modal" data-target="#login-register-form">Register</a>
        </li>					
        <li>
-       <a href="https://billahome.com/create-listing/" class="btn btn-create-listing hidden-xs hidden-sm">Create a Listing</a>		</li>
+       <a href="https://billahome.com/create-listing/" class="btn-create-listing">Create a Listing</a>		</li>
 
      </ul>
    </div>
