@@ -4,9 +4,7 @@ import { PostImageWithOverlay } from "../featured-post/components";
 import Link from "../link";
 import PostCategories from "../post/post-categories";
 
-const Property = ({item}) => {
-  const { title, excerpt, featured_media, link } = item
-  console.log(item)
+const Property = ({ title, excerpt, featured_media, link }) => {
   return (
     <Flex
       direction="column"
@@ -14,10 +12,10 @@ const Property = ({item}) => {
       bg="white"
       as="article"
       shadow="md"
-    //   {...rest}
+      //   {...rest}
     >
       {/* Use the frontity settings for featuredPost here */}
-      {featured_media  && (
+      {featured_media && (
         <Link link={link}>
           <PostImageWithOverlay {...featured_media} />
         </Link>
@@ -27,12 +25,12 @@ const Property = ({item}) => {
         <Heading fontSize="2xl" as="h4" textTransform="uppercase">
           <Link link={link}>{title}</Link>
         </Heading>
-        {/* <Box
+        <Box
           my="20px"
           flex="1"
           color="gray.700"
           dangerouslySetInnerHTML={{ __html: excerpt }}
-        /> */}
+        />
         {/* <PostCategories
           color="black"
           justify="flex-start"

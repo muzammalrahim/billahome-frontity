@@ -21,7 +21,8 @@ const HomepageArchive = ({ state, libraries, actions }) => {
   useEffect( async() => {
     await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
     await actions.source.fetch(`/media/`);
-    allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`);
+    allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
+    console.log(allProperties)
     setRecentlyAdded(allProperties)
     setPageRecentlyAdded(pageRecentlyAdded + 1)
   }, [])
@@ -66,12 +67,14 @@ const HomepageArchive = ({ state, libraries, actions }) => {
           columns={{ base: 1, md: 3 }}
           spacing="40px"
         >
-          {console.log(recentlyAddedItems)}
-          {recentlyAddedItems?.items?.map((item) => {
-            console.log("item object :",item)
-            // const item = state.source[type][id];
-            // return <Propertyview item={item} />;
-          })}
+          {console.log("recently added items:", allProperties)}
+          {recentlyAddedItems?.map(
+            ({ title, link, excerpt, featured_media }) => {
+              console.log("item object :", title);
+              // const item = state.source[type][id];
+              // return <Propertyview title={title} link={link} excerpt={excerpt} featured_media={featured_media} />;
+            }
+          )}
         </SimpleGrid>
 
         <PaginationButton mt="40px" link="/page/2">
