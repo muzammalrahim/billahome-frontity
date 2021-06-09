@@ -148,12 +148,11 @@ const Navigation = ({ menu,state,actions,...props }) =>
           url = result2
           return ( 
             <SiteMenuItem2 key={title} link={url}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
-                <div  css={css` 
-                             position : relative;
-                             padding: 15px;
+                <div  css={css` position : relative;
+                                padding: 15px;
                              border-bottom: 1px solid #e6e6e6;
                            `}
-                     >
+                >
                         {title} 
                 </div>  
             </SiteMenuItem2>        
@@ -170,6 +169,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
       )} 
     </SiteMenu>
   </Box>
+
 )};
 
 export default connect(Navigation);

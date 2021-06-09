@@ -25,3 +25,13 @@ ul {
     list-style-type: none;
 
 }
+
+.login-register-nav{
+    display: inline-flex;
+    color: white;
+}
+
+ .login-register-nav a {
+    padding: 10px 15px 10px 0;
+    cursor: pointer;
+}
