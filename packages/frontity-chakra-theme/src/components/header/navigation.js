@@ -152,7 +152,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
                              position : relative  ;
                              padding: 15px;
                              border-bottom: 1px solid #e6e6e6;
-                          } `}
+                           `}
                      >
                         {title} 
                 </div>  
@@ -161,8 +161,9 @@ const Navigation = ({ menu,state,actions,...props }) =>
         })
       } 
           </MenuItem>
-        </MenuItem2>
+        </MenuItem2>    
        </StyledMenu>
+     
       </div>
      
       ); }
