@@ -6,6 +6,7 @@ import { formatPostData, splitPosts } from "../helpers";
 import { Newsletter } from "../newsletter";
 import ArchiveItem from "./archive-item";
 import { PaginationButton } from "./pagination";
+import Propertyview from './property-view'
 
 const HomepageArchive = ({ state, libraries, actions }) => {
   // Get the data of the current list.
@@ -18,8 +19,11 @@ const HomepageArchive = ({ state, libraries, actions }) => {
 
   let allProperties = '';
   useEffect( async() => {
-    await actions.source.fetch('/latest-properties/6');
-    allProperties = state.source.get('/latest-properties/6');
+    await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
+    await actions.source.fetch(`/media/`);
+    allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`);
+    setRecentlyAdded(allProperties)
+    setPageRecentlyAdded(pageRecentlyAdded + 1)
   }, [])
 
   return (
@@ -57,16 +61,18 @@ const HomepageArchive = ({ state, libraries, actions }) => {
         <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
           Recently Added Properties
         </Heading>
-        {/* <SimpleGrid
+        <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
           columns={{ base: 1, md: 3 }}
           spacing="40px"
         >
-          {data.items.map(({ type, id }) => {
-            const item = state.source[type][id];
-            return <ArchiveItem key={item.id} item={item} />;
+          {console.log(recentlyAddedItems)}
+          {recentlyAddedItems?.items?.map((item) => {
+            console.log("item object :",item)
+            // const item = state.source[type][id];
+            // return <Propertyview item={item} />;
           })}
-        </SimpleGrid> */}
+        </SimpleGrid>
 
         <PaginationButton mt="40px" link="/page/2">
           More posts
