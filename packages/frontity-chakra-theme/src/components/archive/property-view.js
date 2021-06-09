@@ -5,7 +5,6 @@ import Link from "../link";
 import PostCategories from "../post/post-categories";
 
 const Property = ({title, excerpt, featured_media, link }) => {
-  console.log("title catch:",title)
   return (
     <Flex
       direction="column"
@@ -30,7 +29,7 @@ const Property = ({title, excerpt, featured_media, link }) => {
           my="20px"
           flex="1"
           color="gray.700"
-          dangerouslySetInnerHTML={{ __html: excerpt }}
+          dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
         />
         {/* <PostCategories
           color="black"
