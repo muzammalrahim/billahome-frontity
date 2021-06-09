@@ -1,6 +1,6 @@
 import { Box, Heading, Button , Center, ButtonGroup, SimpleGrid } from "@chakra-ui/react";
 import { connect } from "frontity";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FeaturedPostSection } from "../featured-post/featured-post";
 import { formatPostData, splitPosts } from "../helpers";
 import { Newsletter } from "../newsletter";
@@ -13,11 +13,13 @@ const HomepageArchive = ({ state, libraries, actions }) => {
 
   const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
 
+  const [recentlyAddedItems, setRecentlyAdded] = useState([]);
+  const [pageRecentlyAdded, setPageRecentlyAdded] = useState(1);
+
   let allProperties = '';
   useEffect( async() => {
-    await actions.source.fetch('/allproperties');
-    allProperties = state.source.get('/allproperties');
-    console.log('allprops: ', allProperties);
+    await actions.source.fetch('/latest-properties/6');
+    allProperties = state.source.get('/latest-properties/6');
   }, [])
 
   return (
