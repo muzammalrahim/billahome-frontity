@@ -43,7 +43,7 @@ const chakraTheme = {
        * logo : "Frontity"
        * logo: "https://uploads-ssl.webflow.com/5be00771820599586e6bd032/5be0223588110a6dbcac2d05_image.svg",
        */
-      logo: "BillaHomes",
+      logo: "https://billahome.com/wp-content/uploads/2020/08/Logo-2.png",
       showBackgroundPattern: true,
       showSocialLinks: true,
       /**
