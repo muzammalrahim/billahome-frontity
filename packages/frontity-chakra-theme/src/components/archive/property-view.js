@@ -4,7 +4,8 @@ import { PostImageWithOverlay } from "../featured-post/components";
 import Link from "../link";
 import PostCategories from "../post/post-categories";
 
-const Property = ({ title, excerpt, featured_media, link }) => {
+const Property = ({title, excerpt, featured_media, link }) => {
+  console.log("title catch:",title)
   return (
     <Flex
       direction="column"
@@ -23,7 +24,7 @@ const Property = ({ title, excerpt, featured_media, link }) => {
 
       <Flex p="40px" flexGrow="1" direction="column">
         <Heading fontSize="2xl" as="h4" textTransform="uppercase">
-          <Link link={link}>{title}</Link>
+          <Link link={link}>{title.rendered}</Link>
         </Heading>
         <Box
           my="20px"

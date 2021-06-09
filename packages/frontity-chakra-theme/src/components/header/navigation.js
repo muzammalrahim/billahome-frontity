@@ -149,7 +149,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
           return ( 
             <SiteMenuItem2 key={title} link={url}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
                 <div  css={css` 
-                             position : relative  ;
+                             position : relative;
                              padding: 15px;
                              border-bottom: 1px solid #e6e6e6;
                            `}

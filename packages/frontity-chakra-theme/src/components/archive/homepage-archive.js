@@ -22,7 +22,6 @@ const HomepageArchive = ({ state, libraries, actions }) => {
     await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
     await actions.source.fetch(`/media/`);
     allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
-    console.log(allProperties)
     setRecentlyAdded(allProperties)
     setPageRecentlyAdded(pageRecentlyAdded + 1)
   }, [])
@@ -68,11 +67,11 @@ const HomepageArchive = ({ state, libraries, actions }) => {
           spacing="40px"
         >
           {console.log("recently added items:", allProperties)}
-          {recentlyAddedItems?.map(
-            ({ title, link, excerpt, featured_media }) => {
-              console.log("item object :", title);
-              // const item = state.source[type][id];
-              // return <Propertyview title={title} link={link} excerpt={excerpt} featured_media={featured_media} />;
+          {recentlyAddedItems?.map(({title,link, excerpt, featured_media }) => {
+              return (
+                <Propertyview title={title} link={link}/>
+              )
+           
             }
           )}
         </SimpleGrid>
