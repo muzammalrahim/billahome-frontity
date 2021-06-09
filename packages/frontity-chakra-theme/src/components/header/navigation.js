@@ -4,7 +4,7 @@ import React from "react";
 import FrontityLink from "../link";
 import { css } from "frontity";
 import { connect } from "frontity";
-import { TriangleDownIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon} from "@chakra-ui/icons";
 
 const Link = styled(FrontityLink)`
   position: relative;
@@ -109,63 +109,64 @@ const SiteMenuItem2 = ({ link, ...props }) => (
 
 const Navigation = ({ menu,state,actions,...props }) =>
 {
-  
-  const mainMenuList = state.source.get("menus/92/").items;
 
-  {mainMenuList.map(({link}) => (
-                  console.log("boom",link)
-  ))}
+  const items = state.source.get(`/menu/92/`).items;
 
   return(
-  
   <Box as="nav" width="100%" position="absolute" display={{ base: "none", lg: "block" }} {...props}>
     <SiteMenu>
-      {menu.map(({name, link,submenu}) => (
-        <div  class="mmenu" css={css`
-        position:relative;` }>
-        <StyledMenu submenu={submenu}>
+      {items?.map(({title,url,child_items}) =>{
 
-        <SiteMenuItem  key={name} link={link}  onMouseLeave={()=>{setTimeout(() => {
+          let result = url.replace("http://billahome.com", "").replace('https://billahome.com', '').replace('http://billahomes.com', '').replace('https://billahomes.com', '').replace('http://72.167.39.69', '');  
+
+          url = result
+        return (
+        <div  class="mmenu" css={css`position:relative;` }>
+        <StyledMenu submenu={child_items}>
+        <SiteMenuItem  key={title} link={url}  onMouseLeave={()=>{setTimeout(() => {
                                                                actions.theme.hideSubmenu()
-                                                             }, 500)   }} >
-        {submenu && <p  onPointerMove={()=>{actions.theme.showSubmenu(),actions.theme.showcurrentSubMenu(name)}} 
-                        >  {name} 
-                        <TriangleDownIcon mb={1} ml={1} w={3} h={3}/> </p>} {!submenu  &&<p> {name}</p> }
+                                                                                       }, 500)  
+                                                                    }
+                                                                }>
+              {child_items && <p onPointerMove={()=>{actions.theme.showSubmenu(),actions.theme.showcurrentSubMenu(title)}} 
+                              >  {title} 
+                              <ChevronDownIcon mb={0} ml={1} w={6} h={6}/> </p>
+              } {!child_items  &&<p> {title}</p> }
+                                                                         
 
         </SiteMenuItem>
        
-        <MenuItem2 submenu={submenu}>
-         <MenuItem  onMouseLeave={()=>{ actions.theme.shouldshowSubmenu("closed"), actions.theme.hideSubmenu()}} class="innermenu" key={name} css={css`
+        <MenuItem2 submenu={child_items}>
+         <MenuItem  onMouseLeave={()=>{ actions.theme.shouldshowSubmenu("closed"), actions.theme.hideSubmenu()}} class="innermenu" key={title} css={css`
         position: absolute;
         top: 47px;
         background: #000; `}>
         
 
-        { (state.theme.subMenu && submenu && state.theme.currentSubMenu === name) && submenu.map(({name, link,}) => {
-          return (
-            
-            <SiteMenuItem2 key={name} link={link}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}} 
-            
-            >
+        {(state.theme.subMenu && child_items && state.theme.currentSubMenu === title) && child_items?.map(({title,url}) => {
+          let result2 = url.replace("http://billahome.com", "").replace('https://billahome.com', '').replace('http://billahomes.com', '').replace('https://billahomes.com', '').replace('http://72.167.39.69', '');  
+          url = result2
+          return ( 
+            <SiteMenuItem2 key={title} link={url}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
                 <div  css={css` 
                              position : relative  ;
                              padding: 15px;
                              border-bottom: 1px solid #e6e6e6;
                           } `}
-                >
-                {name} 
+                     >
+                        {title} 
                 </div>  
             </SiteMenuItem2>        
          );
         })
       } 
-        </MenuItem>
-      </MenuItem2>
-   
-      </StyledMenu>
+          </MenuItem>
+        </MenuItem2>
+       </StyledMenu>
       </div>
-      ))}
-   
+     
+      ); }
+      )} 
     </SiteMenu>
   </Box>
 )};
