@@ -3,7 +3,7 @@ import image from "@frontity/html2react/processors/image";
 import processors from "./components/styles/processors";
 // import { theme } from "@chakra-ui/react";
 
-// import {menuHandler} from "./utils/handlers";
+import {menuHandler} from "./utils/handlers";
 
 import { propertiesHandler } from "./utils/handlers";
 
@@ -14,11 +14,11 @@ const before = async ({ libraries, actions, state }) => {
 
   // Add handlers for both /players/ and /players/:name.
 
-  // libraries.source.handlers.push(menuHandler);
+   libraries.source.handlers.push(menuHandler);
   // libraries.source.handlers.push(getAllProperties);
   libraries.source.handlers.push(propertiesHandler);
+await actions.source.fetch(`/menu/${92}/`);
 
-  
   // libraries.source.handlers.push(myCategoriesHandler);
 
   // Fetch.
@@ -57,6 +57,7 @@ const chakraTheme = {
        */
       socialLinks: [],
       menu: [],
+      menuUrl: "all-pages",
       featured: {
         showOnArchive: false,
         showOnPost: true,
