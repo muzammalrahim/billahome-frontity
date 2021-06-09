@@ -4,7 +4,7 @@ import React from "react";
 import FrontityLink from "../link";
 import { css } from "frontity";
 import { connect } from "frontity";
-import { TriangleDownIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon} from "@chakra-ui/icons";
 
 const Link = styled(FrontityLink)`
   position: relative;
@@ -121,7 +121,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
 
           url = result
         return (
-        <div  class="mmenu" css={css`position:relative; margin-left: 200px;` }>
+        <div  class="mmenu" css={css`position:relative;` }>
         <StyledMenu submenu={child_items}>
         <SiteMenuItem  key={title} link={url}  onMouseLeave={()=>{setTimeout(() => {
                                                                actions.theme.hideSubmenu()
@@ -130,7 +130,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
                                                                 }>
               {child_items && <p onPointerMove={()=>{actions.theme.showSubmenu(),actions.theme.showcurrentSubMenu(title)}} 
                               >  {title} 
-                              <TriangleDownIcon mb={1} ml={1} w={3} h={3}/> </p>
+                              <ChevronDownIcon mb={0} ml={1} w={6} h={6}/> </p>
               } {!child_items  &&<p> {title}</p> }
                                                                          
 
