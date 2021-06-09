@@ -1,11 +1,12 @@
 import { Box, Heading, Button , Center, ButtonGroup, SimpleGrid } from "@chakra-ui/react";
 import { connect } from "frontity";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FeaturedPostSection } from "../featured-post/featured-post";
 import { formatPostData, splitPosts } from "../helpers";
 import { Newsletter } from "../newsletter";
 import ArchiveItem from "./archive-item";
 import { PaginationButton } from "./pagination";
+import Propertyview from './property-view'
 
 const HomepageArchive = ({ state, libraries, actions }) => {
   // Get the data of the current list.
@@ -13,11 +14,17 @@ const HomepageArchive = ({ state, libraries, actions }) => {
 
   const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
 
+  const [recentlyAddedItems, setRecentlyAdded] = useState([]);
+  const [pageRecentlyAdded, setPageRecentlyAdded] = useState(1);
+
   let allProperties = '';
   useEffect( async() => {
-    await actions.source.fetch('/allproperties');
-    allProperties = state.source.get('/allproperties');
-    console.log('allprops: ', allProperties);
+    await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
+    await actions.source.fetch(`/media/`);
+    allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
+    console.log(allProperties)
+    setRecentlyAdded(allProperties)
+    setPageRecentlyAdded(pageRecentlyAdded + 1)
   }, [])
 
   return (
@@ -55,16 +62,20 @@ const HomepageArchive = ({ state, libraries, actions }) => {
         <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
           Recently Added Properties
         </Heading>
-        {/* <SimpleGrid
+        <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
           columns={{ base: 1, md: 3 }}
           spacing="40px"
         >
-          {data.items.map(({ type, id }) => {
-            const item = state.source[type][id];
-            return <ArchiveItem key={item.id} item={item} />;
-          })}
-        </SimpleGrid> */}
+          {console.log("recently added items:", allProperties)}
+          {recentlyAddedItems?.map(
+            ({ title, link, excerpt, featured_media }) => {
+              console.log("item object :", title);
+              // const item = state.source[type][id];
+              // return <Propertyview title={title} link={link} excerpt={excerpt} featured_media={featured_media} />;
+            }
+          )}
+        </SimpleGrid>
 
         <PaginationButton mt="40px" link="/page/2">
           More posts
