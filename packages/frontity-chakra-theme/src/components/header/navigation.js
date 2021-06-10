@@ -113,7 +113,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
   const items = state.source.get(`/menu/92/`).items;
 
   return(
-  <Box as="nav" width="100%" position="absolute" display={{ base: "none", lg: "block" }} {...props}>
+  <Box as="nav" width="100%" position="absolute" marginTop="30px" display={{ base: "none", lg: "block" }} {...props}>
     <SiteMenu>
       {items?.map(({title,url,child_items}) =>{
 

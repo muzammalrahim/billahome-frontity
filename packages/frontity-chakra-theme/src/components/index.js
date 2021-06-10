@@ -11,12 +11,14 @@ import Post from "./post/post";
 import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
+import About from "./header/About"
 
 // add cutom css by taimoor
 import { Global, css } from "frontity";
+import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 // import mainTheme from "./styles/wp-site/style.min.css";
 import baseTheme from "./styles/wp-site/base.min.css";
-// import widgetCSS from "./styles/wp-site/widgets.min.css";
+import mainCss from "./styles/wp-site/main.css";
 // import helperCSS from "./styles/wp-site/helpers.min.css";
 
 // Theme is the root React component of our theme. The one we will export
@@ -31,14 +33,13 @@ const Theme = ({ state }) => {
     },
     colors: { ...state.theme.colors }
   });
-
+console.log(data)
   return (
     <ChakraProvider theme={{ ...overrides }}>
 
-    {/*<Global styles={css(mainTheme)} />
-    <Global styles={css(widgetCSS)} />
-  <Global styles={css(helperCSS)} />*/}
   
+  <Global styles={css(bootstrap)} />
+  <Global styles={css(mainCss)} />
   <Global styles={css(baseTheme)} />
    <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
@@ -63,6 +64,7 @@ const Theme = ({ state }) => {
 
       >
         <Switch>
+          <About when={data.link === "/about/"} />
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />
