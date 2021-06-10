@@ -11,6 +11,7 @@ import Post from "./post/post";
 import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
+import Agent from "./blog/agent"
 
 // add cutom css by taimoor
 import { Global, css } from "frontity";
@@ -32,7 +33,7 @@ const Theme = ({ state }) => {
     },
     colors: { ...state.theme.colors }
   });
-
+  console.log(data)
   return (
     <ChakraProvider theme={{ ...overrides }}>
 
@@ -62,6 +63,7 @@ const Theme = ({ state }) => {
 
       >
         <Switch>
+          <Agent when={data.link === "/agents/"} />
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />

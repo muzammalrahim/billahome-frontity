@@ -88,4 +88,38 @@ export const propertiesHandler = {
     });
   },
 };
+export const mediaHandler = {
+  name: "media",
+  priority: 18,
+  pattern: "/all-media/:id",
+  func: async ({ route, params, state, libraries }) => {
+    const { api } = libraries.source;
+    const { id } = params;
+
+    // 1. fetch the data you want from the endpoint page
+    const response = await api.get({
+      endpoint: "media",
+      params: {
+        include: params.id, // To make sure we get all elements
+        _embed: true,
+      },
+    });
+
+    // 2. get an array with each item in json format
+    const items = await response.json();
+
+    const total = libraries.source.getTotal(response);
+    const totalPages = libraries.source.getTotalPages(response);
+
+    // 3. add data to source
+    const currentPageData = state.source.data[route];
+
+    Object.assign(currentPageData, {
+      id,
+      items,
+      totalPages,
+      total,
+    });
+  },
+};
 
