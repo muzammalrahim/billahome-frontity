@@ -4,7 +4,6 @@ export const menuHandler = {
   pattern: "/menu/:slug",
   func: async ({ link,route, params, state, libraries }) => {
     const { api } = libraries.source;
-    console.log("PARAMS:", params);
     const { slug } = params;
 
     // 1. fetch the data you want from the endpoint page
@@ -31,7 +30,6 @@ export const menuHandler = {
   
     // Add the menu items to source.data
     const menu = state.source.data[link];
-    console.log(link);
     Object.assign(menu, {
       items: menuData.items,
       isMenu: true,

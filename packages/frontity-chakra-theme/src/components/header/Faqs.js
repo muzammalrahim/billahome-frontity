@@ -15,6 +15,7 @@ import FeaturedMedia from "../post/featured-media";
 import PostHeader from "../post/post-header";
 import PostProgressBar from "../post/post-progressbar";
 import { getPostData, formatPostData } from "../helpers";
+import SearchBar from "./SearchBar"
 
 const About = ({ state, actions, libraries }) => {
   const postData = getPostData(state);
@@ -38,13 +39,7 @@ const About = ({ state, actions, libraries }) => {
 
   return (
 <div class="tai">
-      
- {/*<div className="aboutImgbackground-overlay"> 
-        
-    <div className="mainheader">
-    <Image className="aboutImg"  src="https://demo13.houzez.co/wp-content/uploads/2020/03/205.jpg" alt="Segun Adebayo" />
-  </div>
-     </div>*/}
+       <SearchBar/>
       {!postData.isPage && <PostProgressBar value={scroll} />}
       {/* Look at the settings to see if we should include the featured image */}
       <Csection bg="white" pb="80px" size="lg" class="bhoom">

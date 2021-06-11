@@ -12,14 +12,15 @@ import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
 import About from "./header/About"
+import Faqs from "./header/Faqs"
 
 // add cutom css by taimoor
 import { Global, css } from "frontity";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
-// import mainTheme from "./styles/wp-site/style.min.css";
+import faqsCss from "./styles/wp-site/faqs.min.css";
 import baseTheme from "./styles/wp-site/base.min.css";
 import mainCss from "./styles/wp-site/main.css";
-// import helperCSS from "./styles/wp-site/helpers.min.css";
+import helperCSS from "./styles/wp-site/main.min.css";
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
@@ -33,7 +34,7 @@ const Theme = ({ state }) => {
     },
     colors: { ...state.theme.colors }
   });
-console.log(data)
+
   return (
     <ChakraProvider theme={{ ...overrides }}>
 
@@ -41,6 +42,8 @@ console.log(data)
   <Global styles={css(bootstrap)} />
   <Global styles={css(mainCss)} />
   <Global styles={css(baseTheme)} />
+  <Global styles={css(helperCSS)} />
+  <Global styles={css(faqsCss)} />
    <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
@@ -58,13 +61,12 @@ console.log(data)
         as="main"
         mt={{ base: "40px", md: "70px" }}
         minH="calc(100vh - 320px)"
-
         className="block-head-1 magazine2" 
         bg="#ffffff"
-
       >
         <Switch>
-          <About when={data.link === "/about/"} />
+          <About when={data.link==='/about/'} />
+          <Faqs when={data.link==='/faqs/'} />
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />

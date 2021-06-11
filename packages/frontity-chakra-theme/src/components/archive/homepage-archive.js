@@ -66,7 +66,6 @@ const HomepageArchive = ({ state, libraries, actions }) => {
           columns={{ base: 1, md: 3 }}
           spacing="40px"
         >
-          {console.log("recently added items:", allProperties)}
           {recentlyAddedItems?.map(({title,link, excerpt, featured_media }) => {
               return <Propertyview title={title} link={link}/>
                 
