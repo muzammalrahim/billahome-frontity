@@ -91,7 +91,7 @@ export const propertiesHandler = {
 export const mediaHandler = {
   name: "media",
   priority: 18,
-  pattern: "/all-media/:id",
+  pattern: "/all-media/:ids",
   func: async ({ route, params, state, libraries }) => {
     const { api } = libraries.source;
     const { id } = params;
@@ -100,7 +100,7 @@ export const mediaHandler = {
     const response = await api.get({
       endpoint: "media",
       params: {
-        include: params.id, // To make sure we get all elements
+        include: params.ids, // To make sure we get all elements
         _embed: true,
       },
     });

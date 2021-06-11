@@ -21,7 +21,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
   let allProperties = '';
   useEffect( async() => {
     await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
-    await actions.source.fetch(`/all-media/`, ids);
+    await actions.source.fetch(`/all-media/${ids}`);
     allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
     setRecentlyAdded(allProperties)
     setPageRecentlyAdded(pageRecentlyAdded + 1)
@@ -39,7 +39,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
   const loadMore = async () => {
     console.log(pageRecentlyAdded)
      await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
-     await actions.source.fetch(`/all-media/`,ids);
+     await actions.source.fetch(`/all-media/${ids}`);
     allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
     console.log(allProperties)
     let addedProperties = recentlyAddedItems.concat(allProperties)

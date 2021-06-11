@@ -61,7 +61,7 @@ const About = ({ state, actions, libraries }) => {
           size="md"
           pt="50px"
         >
-          <Html2React html={post.content} />
+          <Html2React html={post?.content} />
         </Content>
         <Divider borderBottom="1px solid" my="80px" />
 
