@@ -25,3 +25,61 @@ ul {
     list-style-type: none;
 
 }
+
+.login-register-nav{
+    display: inline-flex;
+    color: white;
+}
+
+ .login-register-nav a {
+    padding: 10px 15px 10px 15px;
+}
+
+ .btn-create-listing {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    background-color: #f9a200;
+}
+ .btn-create-listing:hover {
+    color: black;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+}
+
+login-link:hover,:focus{
+    color: #006dcc;
+}
+
+
+
+
+.footerLeftLinks  a{
+color: blanchedalmond;
+text-decoration: none;
+}
+
+.footer-copyrightstyle{
+    color: blanchedalmond;
+}
+
+.mainheader{
+    position: relative;
+}
+
+.aboutImg{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    height: 278px;
+    width: -webkit-fill-available;
+    
+   
+}
+
+.aboutImgbackground-overlay{
+    background-color: #000000;
+    opacity: 0.5;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}

@@ -1,3 +1,8 @@
+
+import { Image } from "@chakra-ui/react"
+import {Heading, Text } from "@chakra-ui/react";
+
+
 import { Box, Divider } from "@chakra-ui/react";
 import { connect, styled } from "frontity";
 import React, { useEffect } from "react";
@@ -5,13 +10,13 @@ import List from "../archive";
 import useScrollProgress from "../hooks/useScrollProgress";
 import { LightPatternBox } from "../styles/pattern-box";
 import Section from "../styles/section";
-import AuthorBio from "./author-bio";
-import FeaturedMedia from "./featured-media";
-import PostHeader from "./post-header";
-import PostProgressBar from "./post-progressbar";
+import AuthorBio from "../post/author-bio";
+import FeaturedMedia from "../post/featured-media";
+import PostHeader from "../post/post-header";
+import PostProgressBar from "../post/post-progressbar";
 import { getPostData, formatPostData } from "../helpers";
 
-const Post = ({ state, actions, libraries }) => {
+const About = ({ state, actions, libraries }) => {
   const postData = getPostData(state);
   const post = formatPostData(state, postData);
 
@@ -32,18 +37,14 @@ const Post = ({ state, actions, libraries }) => {
   if (!postData.isReady) return null;
 
   return (
-    <LightPatternBox showPattern={state.theme.showBackgroundPattern} ref={ref}>
-      <Box pb={{ base: "2rem", lg: "50px" }}>
-        <PostHeader
-          mt={{ base: "20px", lg: "4rem" }}
-          px={{ base: "32px", md: "0" }}
-          categories={post.categories}
-          heading={post.title}
-          author={post.author}
-          date={post.publishDate}
-          isPage={postData.isPage}
-        />
-      </Box>
+<div>
+      
+    <div className="aboutImgbackground-overlay"> 
+        
+    <div className="mainheader">
+    <Image className="aboutImg"  src="https://demo13.houzez.co/wp-content/uploads/2020/03/205.jpg" alt="Segun Adebayo" />
+  </div>
+     </div>
       {!postData.isPage && <PostProgressBar value={scroll} />}
 
       {/* Look at the settings to see if we should include the featured image */}
@@ -73,11 +74,11 @@ const Post = ({ state, actions, libraries }) => {
           />
         </Section>
       </Section>
-    </LightPatternBox>
+      </div>
   );
 };
 
-export default connect(Post);
+export default connect(About);
 
 // This component is the parent of the `content.rendered` HTML. We can use nested
 // selectors to style that HTML.

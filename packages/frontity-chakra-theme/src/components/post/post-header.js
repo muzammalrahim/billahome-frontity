@@ -5,6 +5,7 @@ import PostCategories from "./post-categories";
 import { formatDate } from "../helpers";
 import { decode } from "frontity";
 
+
 const PostHeader = ({
   heading,
   categories,
@@ -30,6 +31,8 @@ const PostHeader = ({
       textTransform="uppercase"
       dangerouslySetInnerHTML={{ __html: heading }}
     />
+   
+    
     {description && <Text mt={4}>{description}</Text>}
     {/* Don't show the author if we're on a page type */}
     {!isPage && author && (
