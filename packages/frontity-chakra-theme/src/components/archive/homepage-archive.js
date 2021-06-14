@@ -16,15 +16,37 @@ const HomepageArchive = ({ state, libraries, actions }) => {
 
   const [recentlyAddedItems, setRecentlyAdded] = useState([]);
   const [pageRecentlyAdded, setPageRecentlyAdded] = useState(1);
+  const [ids, setIds] = useState([])
 
   let allProperties = '';
   useEffect( async() => {
     await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
-    await actions.source.fetch(`/media/`);
+    await actions.source.fetch(`/all-media/${ids}`);
     allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
     setRecentlyAdded(allProperties)
     setPageRecentlyAdded(pageRecentlyAdded + 1)
+    getIds()
   }, [])
+
+  const getIds = () => {
+    recentlyAddedItems.map(item => {
+      ids.push(item.id)
+      setIds(ids)
+      console.log(ids)
+    })
+  }
+
+  const loadMore = async () => {
+    console.log(pageRecentlyAdded)
+     await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
+     await actions.source.fetch(`/all-media/${ids}`);
+    allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
+    console.log(allProperties)
+    let addedProperties = recentlyAddedItems.concat(allProperties)
+    setRecentlyAdded(addedProperties)
+    setPageRecentlyAdded(pageRecentlyAdded +1)
+    getIds()
+  }
 
   return (
     <Box bg="accent.50" as="section">
@@ -64,21 +86,30 @@ const HomepageArchive = ({ state, libraries, actions }) => {
         <SimpleGrid
           mt={{ base: "64px", md: "80px" }}
           columns={{ base: 1, md: 3 }}
-          spacing="40px"
+          spacing="20px"
         >
-          {recentlyAddedItems?.map(({title,link, excerpt, featured_media }) => {
-              return <Propertyview title={title} link={link}/>
-                
-     
-           
+
+          {recentlyAddedItems?.map(
+            ({ title, link, excerpt, featured_media }) => {
+              return (
+                <Propertyview
+                  title={title}
+                  link={link}
+                  excerpt={excerpt}
+                  featured_media={featured_media}
+                />
+              );
+
             }
           )}
         </SimpleGrid>
-
-        <PaginationButton mt="40px" link="/page/2">
+        <Center m="40px">
+          <Button colorScheme="yellow" variant="outline" onClick={()=>loadMore()}>Load more</Button>
+        </Center>
+        {/* <PaginationButton mt="40px" link="/page/2">
           More posts
-        </PaginationButton>
-        {/* <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
+        </PaginationButton> */}
+        <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
           Real Estate Articles & News
         </Heading>
         <SimpleGrid
@@ -90,7 +121,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
             const item = state.source[type][id];
             return <ArchiveItem key={item.id} item={item} />;
           })}
-        </SimpleGrid> */}
+        </SimpleGrid>
         <Heading
           as="h4"
           textAlign="center"

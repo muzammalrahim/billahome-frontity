@@ -29,7 +29,7 @@ const Property = ({title, excerpt, featured_media, link }) => {
           my="20px"
           flex="1"
           color="gray.700"
-          dangerouslySetInnerHTML={{ __html: excerpt }}
+          dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
         />
         {/* <PostCategories
           color="black"

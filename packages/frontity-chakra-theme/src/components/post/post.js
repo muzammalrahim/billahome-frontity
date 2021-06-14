@@ -28,7 +28,7 @@ const Post = ({ state, actions, libraries }) => {
   }, []);
 
   const [ref, scroll] = useScrollProgress();
-
+ console.log("pst",  post)
   // Load the post, but only if the data is ready.
   if (!postData.isReady) return null;
 
@@ -38,11 +38,11 @@ const Post = ({ state, actions, libraries }) => {
         <PostHeader
           mt={{ base: "20px", lg: "4rem" }}
           px={{ base: "32px", md: "0" }}
-          categories={post.categories}
-          heading={post.title}
-          author={post.author}
-          date={post.publishDate}
-          isPage={postData.isPage}
+          categories={post?.categories}
+          heading={post?.title}
+          author={post?.author}
+          date={post?.publishDate}
+          isPage={postData?.isPage}
         />
       </Box>
       {!postData.isPage && <PostProgressBar value={scroll} />}

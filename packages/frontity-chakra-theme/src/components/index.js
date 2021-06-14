@@ -13,6 +13,8 @@ import Title from "./title";
 import FontFace from "./styles/font-face";
 import About from "./header/About"
 import Faqs from "./header/Faqs"
+import Agent from "./blog/agent"
+
 
 // add cutom css by taimoor
 import { Global, css } from "frontity";
@@ -65,8 +67,12 @@ const Theme = ({ state }) => {
         bg="#ffffff"
       >
         <Switch>
+
           <About when={data.link==='/about/'} />
           <Faqs when={data.link==='/faqs/'} />
+
+          <Agent when={data.link === "/agents/"} />
+
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />
