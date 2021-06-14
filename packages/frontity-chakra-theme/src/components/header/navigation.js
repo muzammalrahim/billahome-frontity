@@ -56,13 +56,13 @@ const Link2 = styled(FrontityLink)`
 
 export const SiteMenu = props => (
   <Stack
-    ml="50px"
-    spacing="50px"
+    ml="0px"
+    spacing="0px"
     as="ul"
     listStyleType="none"
     align="center"
     direction="row"
-    color="red"
+    color=""
     {...props}
   />
 );
@@ -140,7 +140,10 @@ const Navigation = ({ menu,state,actions,...props }) =>
          <MenuItem  onMouseLeave={()=>{ actions.theme.shouldshowSubmenu("closed"), actions.theme.hideSubmenu()}} class="innermenu" key={title} css={css`
         position: absolute;
         top: 47px;
-        background: #000; `}>
+        background: #000;
+        margin-left: 0px;
+        
+        `}>
         
 
         {(state.theme.subMenu && child_items && state.theme.currentSubMenu === title) && child_items?.map(({title,url}) => {
@@ -149,7 +152,7 @@ const Navigation = ({ menu,state,actions,...props }) =>
           return ( 
             <SiteMenuItem2 key={title} link={url}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
                 <div  css={css` position : relative;
-                                padding: 15px;
+                                padding: 10px 10px 10px 10px;
                              border-bottom: 1px solid #e6e6e6;
                            `}
                 >

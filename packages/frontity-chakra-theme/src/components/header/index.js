@@ -13,7 +13,7 @@ const Header = ({ state, actions }) => (
       <SocialNav menu={state.theme.socialLinks} />
     )}
     <LoginAndReg onClick={actions.theme.openSearchModal} />
-    <SearchButton onClick={actions.theme.openSearchModal} />
+   {/* <SearchButton onClick={actions.theme.openSearchModal} />*/}
     <SearchModal
       isOpen={state.theme.isSearchModalOpen}
       onClose={actions.theme.closeSearchModal}

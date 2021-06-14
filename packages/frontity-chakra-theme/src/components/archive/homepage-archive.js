@@ -88,6 +88,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
           columns={{ base: 1, md: 3 }}
           spacing="20px"
         >
+
           {recentlyAddedItems?.map(
             ({ title, link, excerpt, featured_media }) => {
               return (
@@ -98,6 +99,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
                   featured_media={featured_media}
                 />
               );
+
             }
           )}
         </SimpleGrid>
