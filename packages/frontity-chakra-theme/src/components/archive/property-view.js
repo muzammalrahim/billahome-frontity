@@ -42,7 +42,7 @@ const Property = ({title, excerpt, featured_media, link, extra_data, meta }) => 
           <br />
           ${meta?.fave_property_price}
           <br />
-          <Icon as="Bed" /> {meta?.fave_property_bedrooms} BathRooms:{" "}
+          BedRooms: {meta?.fave_property_bedrooms} BathRooms:{" "}
           {meta?.fave_property_bathrooms}
           <br />
           Area: {meta?.fave_property_size} {meta?.fave_property_size_prefix}
