@@ -43,7 +43,7 @@ const About = ({ state, actions, libraries }) => {
        <SearchBar/>
       {!postData.isPage && <PostProgressBar value={scroll} />}
       {/* Look at the settings to see if we should include the featured image */}
-      <Csection bg="white" pb="80px" size="lg" class="bhoom">
+      <Csection bg="white" pb="80px" mt="100px" size="lg" class="bhoom">
         {post.featured_media != null && (
           <FeaturedMedia id={post.featured_media.id} />
         )}
