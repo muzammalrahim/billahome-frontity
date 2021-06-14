@@ -90,6 +90,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
           columns={{ base: 1, md: 3 }}
           spacing="20px"
         >
+
           {recentlyAddedItems?.map(
             ({ title, link, excerpt, featured_media, _embedded, property_meta }) => {
               return (<>
@@ -103,6 +104,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
                 />
                 {console.log("extra darta =>", property_meta)}</>
               );
+
             }
           )}
         </SimpleGrid>

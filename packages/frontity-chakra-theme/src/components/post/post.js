@@ -10,6 +10,7 @@ import FeaturedMedia from "./featured-media";
 import PostHeader from "./post-header";
 import PostProgressBar from "./post-progressbar";
 import { getPostData, formatPostData } from "../helpers";
+import Script from "@frontity/components/script";
 
 const Post = ({ state, actions, libraries }) => {
   const postData = getPostData(state);
@@ -60,7 +61,7 @@ const Post = ({ state, actions, libraries }) => {
           size="md"
           pt="50px"
         >
-          <Html2React html={post.content} />
+          <Html2React html={post?.content} />
         </Content>
         <Divider borderBottom="1px solid" my="80px" />
 

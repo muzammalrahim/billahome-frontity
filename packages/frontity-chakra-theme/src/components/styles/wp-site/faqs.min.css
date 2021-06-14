@@ -1,0 +1,145 @@
+.elementor-3669 .elementor-element.elementor-element-5cc6cee9 > .elementor-container{min-height:200px;}.elementor-3669 .elementor-element.elementor-element-5cc6cee9:not(.elementor-motion-effects-element-type-background), .elementor-3669 .elementor-element.elementor-element-5cc6cee9 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("https://billahome.com/wp-content/uploads/2020/03/205.jpg");background-position:center center;background-repeat:no-repeat;background-size:cover;}.elementor-3669 .elementor-element.elementor-element-5cc6cee9 > .elementor-background-overlay{background-color:#004274;opacity:0.5;transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-3669 .elementor-element.elementor-element-5cc6cee9{transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;}.elementor-3669 .elementor-element.elementor-element-3611144b .elementor-heading-title{color:#FFFFFF;font-family:"Poppins", Sans-serif;font-size:30px;font-weight:600;}.elementor-3669 .elementor-element.elementor-element-78adcf7a .elementor-spacer-inner{height:30px;}.elementor-3669 .elementor-element.elementor-element-3aa35b47 .elementor-heading-title{font-family:"Poppins", Sans-serif;}.elementor-3669 .elementor-element.elementor-element-34c258c1 .elementor-spacer-inner{height:10px;}.elementor-3669 .elementor-element.elementor-element-dee16b2 .elementor-tab-title{background-color:#FFFFFF;}.elementor-3669 .elementor-element.elementor-element-dee16b2 .elementor-accordion-title{font-family:"Poppins", Sans-serif;font-weight:500;}.elementor-3669 .elementor-element.elementor-element-dee16b2 .elementor-tab-content{background-color:#FFFFFF;font-family:"Poppins", Sans-serif;font-size:15px;line-height:1.6em;}@media(min-width:1025px){.elementor-3669 .elementor-element.elementor-element-5cc6cee9:not(.elementor-motion-effects-element-type-background), .elementor-3669 .elementor-element.elementor-element-5cc6cee9 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-attachment:scroll;}}
+
+
+.form-control::placeholder,
+.search-banner-wrap ::-webkit-input-placeholder,
+.advanced-search ::-webkit-input-placeholder,
+.advanced-search-banner-wrap ::-webkit-input-placeholder,
+.overlay-search-advanced-module ::-webkit-input-placeholder {
+  color: #a1a7a8; 
+}
+
+.search-banner-wrap ::-moz-placeholder,
+.advanced-search ::-moz-placeholder,
+.advanced-search-banner-wrap ::-moz-placeholder,
+.overlay-search-advanced-module ::-moz-placeholder {
+  color: #a1a7a8; 
+}
+
+.search-banner-wrap :-ms-input-placeholder,
+.advanced-search :-ms-input-placeholder,
+.advanced-search-banner-wrap ::-ms-input-placeholder,
+.overlay-search-advanced-module ::-ms-input-placeholder {
+  color: #a1a7a8; 
+}
+
+.search-banner-wrap :-moz-placeholder,
+.advanced-search :-moz-placeholder,
+.advanced-search-banner-wrap :-moz-placeholder,
+.overlay-search-advanced-module :-moz-placeholder {
+  color: #a1a7a8; 
+}
+
+.advanced-search .form-control,
+.advanced-search .bootstrap-select > .btn,
+.location-trigger,
+.vertical-search-wrap .form-control,
+.vertical-search-wrap .bootstrap-select > .btn,
+.step-search-wrap .form-control,
+.step-search-wrap .bootstrap-select > .btn,
+.advanced-search-banner-wrap .form-control,
+.advanced-search-banner-wrap .bootstrap-select > .btn,
+.search-banner-wrap .form-control,
+.search-banner-wrap .bootstrap-select > .btn,
+.overlay-search-advanced-module .form-control,
+.overlay-search-advanced-module .bootstrap-select > .btn,
+.advanced-search-v2 .advanced-search-btn,
+.advanced-search-v2 .advanced-search-btn:hover {
+  border-color: #cccccc; 
+}
+
+.advanced-search-nav,
+.search-expandable,
+.overlay-search-advanced-module {
+  background-color: #FFFFFF; 
+}
+.btn-search {
+  color: #ffffff;
+  background-color: #fab93e;
+  border-color: #fab93e;
+}
+.btn-search:hover, .btn-search:active  {
+  color: #ffffff;
+  background-color: #fab93e;
+  border-color: #fab93e;
+}
+.advanced-search-btn {
+  color: #fab93e;
+  background-color: #ffffff;
+  border-color: #dce0e0; 
+}
+.advanced-search-btn:hover, .advanced-search-btn:active {
+  color: #fab93e;
+  background-color: #ffffff;
+  border-color: #dce0e0; 
+}
+.advanced-search-btn:focus {
+  color: #fab93e;
+  background-color: #ffffff;
+  border-color: #dce0e0; 
+}
+.search-expandable-label {
+  color: #ffffff;
+  background-color: #ff6e00;
+}
+.advanced-search-nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.features-list-wrap .control--checkbox,
+.features-list-wrap .control--radio,
+.range-text, 
+.features-list-wrap .control--checkbox, 
+.features-list-wrap .btn-features-list, 
+.overlay-search-advanced-module .search-title, 
+.overlay-search-advanced-module .overlay-search-module-close {
+    color: #222222;
+}
+.advanced-search-half-map {
+  background-color: #FFFFFF; 
+}
+.advanced-search-half-map .range-text, 
+.advanced-search-half-map .features-list-wrap .control--checkbox, 
+.advanced-search-half-map .features-list-wrap .btn-features-list {
+    color: #222222;
+}
+
+.save-search-btn {
+    border-color: #28a745 ;
+    background-color: #28a745 ;
+    color: #ffffff ;
+}
+.save-search-btn:hover,
+.save-search-btn:active {
+    border-color: #28a745;
+    background-color: #28a745 ;
+    color: #ffffff ;
+}
+.advanced-search-nav {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.advanced-search-nav, .search-expandable, .overlay-search-advanced-module {
+background-color: #FFFFFF;
+}
+.advanced-search-v2 .flex-search {
+margin-right: -2px;
+-ms-flex-preferred-size: 110px;
+flex-basis: 110px;
+padding-right: 0;
+}
+.fields-width {
+width: 18%;
+}
+.flex-search {
+-ms-flex-preferred-size: 130px;
+flex-basis: 130px;
+padding: 0 10px 0 0;
+}
+.main-nav, .dropdown-menu, .login-register, .btn.btn-create-listing, .logged-in-nav, .btn-phone-number {
+font-family: Roboto;
+font-size: 14px;
+font-weight: 500;
+text-align: left;
+text-transform: uppercase;
+}

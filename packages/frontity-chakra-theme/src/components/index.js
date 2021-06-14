@@ -12,14 +12,17 @@ import SearchResults from "./search";
 import Title from "./title";
 import FontFace from "./styles/font-face";
 import About from "./header/About"
+import Faqs from "./header/Faqs"
 import Agent from "./blog/agent"
+
 
 // add cutom css by taimoor
 import { Global, css } from "frontity";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
-// import mainTheme from "./styles/wp-site/style.min.css";
+import faqsCss from "./styles/wp-site/faqs.min.css";
 import baseTheme from "./styles/wp-site/base.min.css";
 import mainCss from "./styles/wp-site/main.css";
+import helperCSS from "./styles/wp-site/main.min.css";
 import MainCss from "./styles/wp-site/index.css";
 // import helperCSS from "./styles/wp-site/helpers.min.css";
 
@@ -38,11 +41,15 @@ const Theme = ({ state }) => {
 
   return (
     <ChakraProvider theme={{ ...overrides }}>
-      <Global styles={css(bootstrap)} />
-      <Global styles={css(mainCss)} />
-      <Global styles={css(baseTheme)} />
-      <Global styles={css(MainCss)} />
-      <FontFace />
+
+  
+  <Global styles={css(bootstrap)} />
+  <Global styles={css(mainCss)} />
+  <Global styles={css(baseTheme)} />
+  <Global styles={css(helperCSS)} />
+  <Global styles={css(faqsCss)} />
+   <Global styles={css(MainCss)} />
+   <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
@@ -63,8 +70,12 @@ const Theme = ({ state }) => {
         bg="#ffffff"
       >
         <Switch>
-          <About when={data.link === "/about/"} />
+
+          <About when={data.link==='/about/'} />
+          <Faqs when={data.link==='/faqs/'} />
+
           <Agent when={data.link === "/agents/"} />
+
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />
