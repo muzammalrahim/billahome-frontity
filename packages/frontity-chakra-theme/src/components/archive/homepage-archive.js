@@ -16,38 +16,40 @@ const HomepageArchive = ({ state, libraries, actions }) => {
 
   const [recentlyAddedItems, setRecentlyAdded] = useState([]);
   const [pageRecentlyAdded, setPageRecentlyAdded] = useState(1);
+  const [newItemAdded, setNewItemAdded] = useState([]);
   const [ids, setIds] = useState([])
 
   let allProperties = '';
   useEffect( async() => {
     await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
-    await actions.source.fetch(`/all-media/${ids}`);
     allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
     setRecentlyAdded(allProperties)
+    setNewItemAdded(allProperties);
     setPageRecentlyAdded(pageRecentlyAdded + 1)
-    getIds()
   }, [])
 
+  useEffect(async () => {
+    getIds();
+    await actions.source.fetch(`/all-media/${ids}`);
+  }, [newItemAdded]);
+
   const getIds = () => {
-    recentlyAddedItems.map(item => {
-      ids.push(item.id)
-      setIds(ids)
-      console.log(ids)
-    })
+    newItemAdded?.map((item) => {
+      ids.push(item.featured_media);
+      setIds(ids);
+    });
   }
 
   const loadMore = async () => {
-    console.log(pageRecentlyAdded)
+    // getIds()
      await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
      await actions.source.fetch(`/all-media/${ids}`);
     allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
-    console.log(allProperties)
     let addedProperties = recentlyAddedItems.concat(allProperties)
     setRecentlyAdded(addedProperties)
+    setNewItemAdded(allProperties);
     setPageRecentlyAdded(pageRecentlyAdded +1)
-    getIds()
   }
-
   return (
     <Box bg="accent.50" as="section">
       <FeaturedPostSection
@@ -89,14 +91,17 @@ const HomepageArchive = ({ state, libraries, actions }) => {
           spacing="20px"
         >
           {recentlyAddedItems?.map(
-            ({ title, link, excerpt, featured_media }) => {
-              return (
+            ({ title, link, excerpt, featured_media, _embedded, property_meta }) => {
+              return (<>
                 <Propertyview
                   title={title}
                   link={link}
                   excerpt={excerpt}
                   featured_media={featured_media}
+                  extra_data={_embedded}
+                  meta= {property_meta}
                 />
+                {console.log("extra darta =>", property_meta)}</>
               );
             }
           )}
@@ -104,22 +109,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
         <Center m="40px">
           <Button colorScheme="yellow" variant="outline" onClick={()=>loadMore()}>Load more</Button>
         </Center>
-        {/* <PaginationButton mt="40px" link="/page/2">
-          More posts
-        </PaginationButton> */}
-        <Heading textAlign="center" fontSize={{ base: "4xl", md: "6xl" }}>
-          Real Estate Articles & News
-        </Heading>
-        <SimpleGrid
-          mt={{ base: "64px", md: "80px" }}
-          columns={{ base: 1, md: 4 }}
-          // spacing="40px"
-        >
-          {data.items.map(({ type, id }) => {
-            const item = state.source[type][id];
-            return <ArchiveItem key={item.id} item={item} />;
-          })}
-        </SimpleGrid>
+       
         <Heading
           as="h4"
           textAlign="center"
