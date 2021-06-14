@@ -5,7 +5,7 @@ import React from "react";
 const LoginAndReg = props => (
  
   <div class="login-register">
-       <ul class="login-register-nav">
+       <ul class="login-register-nav login-register-navMain">
              
        <li class="login-link">
          <a href="#" data-toggle="modal" data-target="#login-register-form">Login</a>

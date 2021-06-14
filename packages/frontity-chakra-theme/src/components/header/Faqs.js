@@ -16,6 +16,7 @@ import PostHeader from "../post/post-header";
 import PostProgressBar from "../post/post-progressbar";
 import { getPostData, formatPostData } from "../helpers";
 import SearchBar from "./SearchBar"
+import Accordians from "../faqsComp/Accordians"
 
 const About = ({ state, actions, libraries }) => {
   const postData = getPostData(state);
@@ -59,6 +60,8 @@ const About = ({ state, actions, libraries }) => {
         </Content>
         
       </Csection>
+      <Accordians/>
+      {console.log("oops:",post.content)}
       </div>
   );
 };
