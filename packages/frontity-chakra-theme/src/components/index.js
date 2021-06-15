@@ -50,14 +50,9 @@ const Theme = ({ state }) => {
   <Global styles={css(baseTheme)} />
   <Global styles={css(helperCSS)} />
   <Global styles={css(faqsCss)} />
-
   <Global styles={css(contactCSS)} />
-
-<<<<<<< HEAD
-=======
    <Global styles={css(MainCss)} />
 
->>>>>>> fc9ac273a9061d7bd7af8b94d6cc74ff6461ed10
    <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
