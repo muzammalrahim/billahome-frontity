@@ -87,7 +87,7 @@ export const propertiesHandler = {
   },
 };
 export const mediaHandler = {
-  name: "media",
+  name: "site-media",
   priority: 18,
   pattern: "/all-media/:ids",
   func: async ({ route, params, state, libraries }) => {
@@ -99,6 +99,7 @@ export const mediaHandler = {
       endpoint: "media",
       params: {
         include: params.ids, // To make sure we get all elements
+        per_page: 100, // To make sure we get all elements
         _embed: true,
       },
     });

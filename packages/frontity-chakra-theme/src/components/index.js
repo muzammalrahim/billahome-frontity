@@ -25,6 +25,8 @@ import baseTheme from "./styles/wp-site/base.min.css";
 import mainCss from "./styles/wp-site/main.css";
 import helperCSS from "./styles/wp-site/main.min.css";
 import contactCSS from "./styles/wp-site/contact.css";
+import MainCss from "./styles/wp-site/index.css";
+
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
@@ -48,8 +50,14 @@ const Theme = ({ state }) => {
   <Global styles={css(baseTheme)} />
   <Global styles={css(helperCSS)} />
   <Global styles={css(faqsCss)} />
+
   <Global styles={css(contactCSS)} />
 
+<<<<<<< HEAD
+=======
+   <Global styles={css(MainCss)} />
+
+>>>>>>> fc9ac273a9061d7bd7af8b94d6cc74ff6461ed10
    <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
@@ -67,7 +75,7 @@ const Theme = ({ state }) => {
         as="main"
         mt={{ base: "40px", md: "70px" }}
         minH="calc(100vh - 320px)"
-        className="block-head-1 magazine2" 
+        className="block-head-1 magazine2"
         bg="#ffffff"
       >
         <Switch>
