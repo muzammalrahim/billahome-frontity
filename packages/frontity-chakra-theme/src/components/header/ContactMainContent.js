@@ -321,7 +321,7 @@ class ContactMainContent extends React.Component {
                     >
                       <div class="elementor-widget-container">
                         <div class="elementor-social-icons-wrapper elementor-grid">
-                          <div class="elementor-grid-item">
+                          <div class="elementor-grid-item elementor-grid-itemMargin ">
                             <a
                               class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-animation-shrink elementor-repeater-item-4d4e750"
                               href="#"
@@ -333,17 +333,17 @@ class ContactMainContent extends React.Component {
                               <i class="fab fa-facebook"></i>{" "}
                             </a>
                           </div>
-                          <div class="elementor-grid-item">
+                          <div class="elementor-grid-item elementor-grid-itemMargin ">
                             <a
                               class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-shrink elementor-repeater-item-a2d8d9c"
                               href="#"
                               target="_blank"
                             >
-                              <span class="elementor-screen-only">Twitter</span>
+                              <span class="elementor-screen-only ">Twitter</span>
                               <i class="fab fa-twitter"></i>{" "}
                             </a>
                           </div>
-                          <div class="elementor-grid-item">
+                          <div class="elementor-grid-item elementor-grid-itemMargin">
                             <a
                               class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-4483b35"
                               href="#"
@@ -353,7 +353,7 @@ class ContactMainContent extends React.Component {
                               <i class="fab fa-youtube"></i>{" "}
                             </a>
                           </div>
-                          <div class="elementor-grid-item">
+                          <div class="elementor-grid-item elementor-grid-itemMargin">
                             <a
                               class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-animation-shrink elementor-repeater-item-4cd5d30"
                               href="#"
@@ -365,7 +365,7 @@ class ContactMainContent extends React.Component {
                               <i class="fab fa-linkedin"></i>{" "}
                             </a>
                           </div>
-                          <div class="elementor-grid-item">
+                          <div class="elementor-grid-item elementor-grid-itemMargin">
                             <a
                               class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-9e48d2c"
                               href="#"
@@ -377,7 +377,7 @@ class ContactMainContent extends React.Component {
                               <i class="fab fa-instagram"></i>{" "}
                             </a>
                           </div>
-                          <div class="elementor-grid-item">
+                          <div class="elementor-grid-item elementor-grid-itemMargin">
                             <a
                               class="elementor-icon elementor-social-icon elementor-social-icon-skype elementor-animation-shrink elementor-repeater-item-a996753"
                               href="#"
