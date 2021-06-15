@@ -14,6 +14,7 @@ import FontFace from "./styles/font-face";
 import About from "./header/About"
 import Faqs from "./header/Faqs"
 import Agent from "./blog/agent"
+import ContactComp from "./header/ContactComp"
 
 
 // add cutom css by taimoor
@@ -23,8 +24,9 @@ import faqsCss from "./styles/wp-site/faqs.min.css";
 import baseTheme from "./styles/wp-site/base.min.css";
 import mainCss from "./styles/wp-site/main.css";
 import helperCSS from "./styles/wp-site/main.min.css";
+import contactCSS from "./styles/wp-site/contact.css";
 import MainCss from "./styles/wp-site/index.css";
-// import helperCSS from "./styles/wp-site/helpers.min.css";
+
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
@@ -48,7 +50,11 @@ const Theme = ({ state }) => {
   <Global styles={css(baseTheme)} />
   <Global styles={css(helperCSS)} />
   <Global styles={css(faqsCss)} />
+
+  <Global styles={css(contactCSS)} />
+
    <Global styles={css(MainCss)} />
+
    <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
@@ -73,6 +79,7 @@ const Theme = ({ state }) => {
 
           <About when={data.link==='/about/'} />
           <Faqs when={data.link==='/faqs/'} />
+          <ContactComp when={data.link==='/contact/'} />
 
           <Agent when={data.link === "/agents/"} />
 
