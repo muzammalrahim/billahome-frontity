@@ -43,21 +43,17 @@ const Theme = ({ state }) => {
     },
     colors: { ...state.theme.colors }
   });
-
+console.log("data log for urls", data)
   return (
     <ChakraProvider theme={{ ...overrides }}>
+      <Global styles={css(bootstrap)} />
+      <Global styles={css(mainCss)} />
+      <Global styles={css(baseTheme)} />
+      <Global styles={css(helperCSS)} />
+      <Global styles={css(faqsCss)} />
+      <Global styles={css(contactCSS)} />
 
-  
-  <Global styles={css(bootstrap)} />
-  <Global styles={css(mainCss)} />
-  <Global styles={css(baseTheme)} />
-  <Global styles={css(helperCSS)} />
-  <Global styles={css(faqsCss)} />
-  <Global styles={css(contactCSS)} />
-
-
-
-   <FontFace />
+      <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
@@ -78,11 +74,10 @@ const Theme = ({ state }) => {
         bg="#ffffff"
       >
         <Switch>
-
-          <Search when={data.link===`/all-properties/`} />
-          <About when={data.link==='/about/'} />
-          <Faqs when={data.link==='/faqs/'} />
-          <ContactComp when={data.link==='/contact/'} />
+          {/* <Search when={data.link === `/all-properties/`} /> */}
+          <About when={data.link === "/backend/about/"} />
+          <Faqs when={data.link === "/faqs/"} />
+          <ContactComp when={data.link === "/contact/"} />
           <Agent when={data.link === "/agents/"} />
           <AllPropertiesArchive when={data.link === "/all-properties/"} />
           <Loading when={data.isFetching} />

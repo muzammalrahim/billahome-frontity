@@ -1,13 +1,11 @@
 const settings = {
-
-  "name": "home",
-  "state": {
-    "frontity": {
-      "url": "http://billahomes.com/backend",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
-    }
-
+  name: "home",
+  state: {
+    frontity: {
+      url: "http://billahomes.com/backend",
+      title: "Test Frontity Blog",
+      description: "WordPress installation for Frontity development",
+    },
   },
   packages: [
     {
@@ -21,7 +19,8 @@ const settings = {
               submenu: [
                 {
                   name: "ABOUT",
-                  link: "/about/",
+                  // link: "/about/",
+                  link: "/backend/about/",
                 },
                 {
                   name: "CONTACT",
@@ -79,20 +78,18 @@ const settings = {
       },
     },
     {
-
-      "name": "@frontity/wp-source",
-      "state": {
-        "source": {
-          "url": "http://billahomes.com/backend",
-          "postTypes": [
+      name: "@frontity/wp-source",
+      state: {
+        source: {
+          url: "http://billahomes.com/backend",
+          postTypes: [
             {
               type: "property", // type slug
               endpoint: "properties", // REST API endpoint
-            }
+            },
           ],
-        }
-      }
-
+        },
+      },
     },
     "@frontity/tiny-router",
     "@frontity/html2react",
