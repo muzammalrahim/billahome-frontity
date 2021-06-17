@@ -65,7 +65,7 @@ return (
     ({ title, link, excerpt, featured_media, _embedded, property_meta }) => {
       return (<>
         <AllProperty
-          title={title}
+          title={title.rendered}
           link={link}
           excerpt={excerpt}
           featured_media={featured_media}
@@ -80,7 +80,7 @@ return (
   )}
 </SimpleGrid>
     <Center m="40px">    
-      <div className="buyPropertyNavigation" onClick={()=>PrevPage()}>  <ChevronLeftIcon m={2} w={10} h={10} color="#fab93e"/>  </div>
+      <button className="buyPropertyNavigation" onClick={()=>PrevPage()}>  <ChevronLeftIcon m={2} w={10} h={10} color="#fab93e"/>  </button>
       <div className="buyPropertyNavigation" onClick={()=>NextPage()}>  <ChevronRightIcon m={2} w={10} h={10} color="#fab93e"/>  </div>
     </Center>
 </Box>

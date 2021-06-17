@@ -31,10 +31,6 @@ const Property = ({title, excerpt, featured_media, link, extra_data, meta }) => 
           color="gray.700"
           // dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
         >
-          {console.log(
-            "terms data",
-            extra_data["wp:featuredmedia"][0].source_url
-          )}
           <Badge>{extra_data["wp:term"][1][0]?.name}</Badge>{" "}
           <Badge> {extra_data["wp:term"][3][0].name}</Badge>
           <br />

@@ -117,13 +117,13 @@ const Navigation = ({ menu,state,actions,...props }) =>
     <SiteMenu>
       {items?.map(({title,url,child_items}) =>{
 
-          let result = url.replace("http://billahome.com", "").replace('https://billahome.com', '').replace('http://billahomes.com', '').replace('https://billahomes.com', '').replace('http://72.167.39.69', '');  
-
-          url = result
+          let result = url.replace("http://billahome.com", "").replace('https://billahome.com', "").replace('http://billahomes.com/backend', "").replace('https://billahomes.com', "").replace('http://72.167.39.69', "");  
+         const urls = result
+          {console.log('result', url)}
         return (
         <div  class="mmenu" css={css`position:relative;` }>
         <StyledMenu submenu={child_items}>
-        <SiteMenuItem  key={title} link={url}  onMouseLeave={()=>{setTimeout(() => {
+        <SiteMenuItem  key={title} link={urls}  onMouseLeave={()=>{setTimeout(() => {
                                                                actions.theme.hideSubmenu()
                                                                                        }, 500)  
                                                                     }
@@ -147,10 +147,10 @@ const Navigation = ({ menu,state,actions,...props }) =>
         
 
         {(state.theme.subMenu && child_items && state.theme.currentSubMenu === title) && child_items?.map(({title,url}) => {
-          let result2 = url.replace("http://billahome.com", "").replace('https://billahome.com', '').replace('http://billahomes.com', '').replace('https://billahomes.com', '').replace('http://72.167.39.69', '');  
-          url = result2
+          let result2 = url.replace("http://billahome.com", "").replace('https://billahome.com', '').replace('http://billahomes.com/backend', '').replace('https://billahomes.com', '').replace('http://72.167.39.69', '');  
+         const urls = result2
           return ( 
-            <SiteMenuItem2 key={title} link={url}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
+            <SiteMenuItem2 key={title} link={urls}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
                 <div  css={css` position : relative;
                                 padding: 10px 10px 10px 10px;
                              border-bottom: 1px solid #e6e6e6;

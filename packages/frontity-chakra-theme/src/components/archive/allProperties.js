@@ -31,19 +31,25 @@ const AllProperty = ({title, excerpt, featured_media, link, extra_data, meta }) 
           color="gray.700"
           // dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
         >
-          
-        {/*<Badge>{extra_data["wp:term"][1][0]?.name}</Badge>{" "}
-          <Badge> {extra_data["wp:term"][3][0]?.name}</Badge>*/}
+        <Badge>{extra_data["wp:term"][1][0].name}</Badge>
+        <Badge>{extra_data["wp:term"][3][0].name}</Badge>
           <br />
+          <h6>{title}</h6>
           {meta?.fave_property_address}
           <br />
-          ${meta?.fave_property_price}
+          ${meta?.fave_property_price} {"/"} {meta?.fave_property_price_postfix}
           <br />
-          BedRooms: {meta?.fave_property_bedrooms} BathRooms:{" "}
+          BedRooms: {meta?.fave_property_bedrooms}{",  "} BathRooms:{" "}
           {meta?.fave_property_bathrooms}
           <br />
           Area: {meta?.fave_property_size} {meta?.fave_property_size_prefix}
+          <br />
+          <h6>{extra_data["wp:term"][0][0].name}</h6>
+          
         </Box>
+
+
+        
         {/* <PostCategories
           color="black"
           justify="flex-start"

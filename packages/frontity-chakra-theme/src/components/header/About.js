@@ -34,7 +34,7 @@ const About = ({ state, actions, libraries }) => {
   const [ref, scroll] = useScrollProgress();
 
   // Load the post, but only if the data is ready.
-  if (!postData.isReady) return null;
+  if (!postData?.isReady) return null;
 
   return (
 <div class="tai">
@@ -45,11 +45,11 @@ const About = ({ state, actions, libraries }) => {
     <Image className="aboutImg"  src="https://demo13.houzez.co/wp-content/uploads/2020/03/205.jpg" alt="Segun Adebayo" />
   </div>
      </div>*/}
-      {!postData.isPage && <PostProgressBar value={scroll} />}
+      {!postData?.isPage && <PostProgressBar value={scroll} />}
       {/* Look at the settings to see if we should include the featured image */}
       <Csection bg="white" pb="80px" size="lg" class="bhoom">
-        {post.featured_media != null && (
-          <FeaturedMedia id={post?.featured_media?.id} />
+        {post?.featured_media != null && (
+          <FeaturedMedia id={post?.featured_media.id} />
         )}
       
         {/* Render the content using the Html2React component so the HTML is processed

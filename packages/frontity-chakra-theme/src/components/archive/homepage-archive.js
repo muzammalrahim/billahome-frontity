@@ -102,7 +102,7 @@ const HomepageArchive = ({ state, libraries, actions }) => {
                   extra_data={_embedded}
                   meta= {property_meta}
                 />
-                </>
+              </>
               );
 
             }

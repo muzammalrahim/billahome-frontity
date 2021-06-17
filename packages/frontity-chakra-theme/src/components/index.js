@@ -15,6 +15,8 @@ import About from "./header/About"
 import Faqs from "./header/Faqs"
 import Agent from "./blog/agent"
 import ContactComp from "./header/ContactComp"
+import Search from "./serch-result/search";
+
 import AllPropertiesArchive from "./archive/AllPropertiesArchive"
 
 // add cutom css by taimoor
@@ -52,7 +54,7 @@ const Theme = ({ state }) => {
   <Global styles={css(helperCSS)} />
   <Global styles={css(faqsCss)} />
   <Global styles={css(contactCSS)} />
- 
+
 
 
    <FontFace />
@@ -77,6 +79,7 @@ const Theme = ({ state }) => {
       >
         <Switch>
 
+         {/* <Search when={data.link===`/all-properties/`} /> */}
           <About when={data.link==='/about/'} />
           <Faqs when={data.link==='/faqs/'} />
           <ContactComp when={data.link==='/contact/'} />
