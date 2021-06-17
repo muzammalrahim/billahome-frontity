@@ -1,46 +1,32 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "95a1e19d6a155ced13c1",
+  "hash": "68ca3cf73b93c7d09034",
   "publicPath": "/static/",
   "outputPath": "D:\\Projects\\frontity project 2\\billahome-frontity\\build\\static",
   "assetsByChunkName": {
-    "archive": "archive.module.js",
-    "home": "home.module.js"
+    "home": [
+      "home.module.js",
+      "home.8c46e5a5daac0af0791d.hot-update.js"
+    ]
   },
-  "assets": [
-    {
-      "name": "home.module.js",
-      "size": 17714006,
-      "chunks": [
-        "home"
-      ],
-      "chunkNames": [
-        "home"
-      ],
-      "info": {},
-      "emitted": true
-    }
-  ],
-  "filteredAssets": 9,
+  "assets": [],
+  "filteredAssets": 11,
   "namedChunkGroups": {
     "home": {
       "chunks": [
         "home"
       ],
       "assets": [
-        "home.module.js"
+        "home.module.js",
+        "home.8c46e5a5daac0af0791d.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "archive": {
-      "chunks": [
-        "archive"
-      ],
-      "assets": [
-        "archive.module.js"
-      ],
+      "chunks": [],
+      "assets": [],
       "children": {},
       "childAssets": {}
     }
@@ -48,15 +34,10 @@
   "generator": "loadable-components",
   "chunks": [
     {
-      "id": "archive",
-      "files": [
-        "archive.module.js"
-      ]
-    },
-    {
       "id": "home",
       "files": [
-        "home.module.js"
+        "home.module.js",
+        "home.8c46e5a5daac0af0791d.hot-update.js"
       ]
     }
   ]

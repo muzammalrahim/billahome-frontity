@@ -56,7 +56,7 @@ export function formatPostData(state, post) {
     id: post.id,
     author: getPostAuthor(state, post),
     publishDate: post.date,
-    title: post.title.rendered,
+    // title: post.title.rendered,
     categories: getPostCategories(state, post),
     tags: getPostTags(state, post),
     link: post.link,
@@ -70,7 +70,7 @@ export function splitPosts(state, routeData) {
   const firstThreePosts = [];
   const otherPosts = [];
 
-  routeData.forEach((item, idx) => {
+  routeData?.forEach((item, idx) => {
     const itemData = state.source[item.type][item.id];
     if (idx < 3) firstThreePosts.push(itemData);
     else otherPosts.push(itemData);

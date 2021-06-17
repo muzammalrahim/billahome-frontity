@@ -15,7 +15,7 @@ import About from "./header/About"
 import Faqs from "./header/Faqs"
 import Agent from "./blog/agent"
 import ContactComp from "./header/ContactComp"
-
+import AllPropertiesArchive from "./archive/AllPropertiesArchive"
 
 // add cutom css by taimoor
 import { Global, css } from "frontity";
@@ -26,6 +26,7 @@ import mainCss from "./styles/wp-site/main.css";
 import helperCSS from "./styles/wp-site/main.min.css";
 import contactCSS from "./styles/wp-site/contact.css";
 import MainCss from "./styles/wp-site/index.css";
+
 
 
 // Theme is the root React component of our theme. The one we will export
@@ -51,7 +52,8 @@ const Theme = ({ state }) => {
   <Global styles={css(helperCSS)} />
   <Global styles={css(faqsCss)} />
   <Global styles={css(contactCSS)} />
-   <Global styles={css(MainCss)} />
+ 
+
 
    <FontFace />
       {/* Add some metatags to the <head> of the HTML. */}
@@ -78,9 +80,8 @@ const Theme = ({ state }) => {
           <About when={data.link==='/about/'} />
           <Faqs when={data.link==='/faqs/'} />
           <ContactComp when={data.link==='/contact/'} />
-
           <Agent when={data.link === "/agents/"} />
-
+          <AllPropertiesArchive when={data.link === "/all-properties/"} />
           <Loading when={data.isFetching} />
           <SearchResults when={data.isSearch} />
           <Archive when={data.isArchive} />
