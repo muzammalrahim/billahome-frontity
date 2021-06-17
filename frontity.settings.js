@@ -3,7 +3,7 @@ const settings = {
   "name": "home",
   "state": {
     "frontity": {
-      "url": "http://billahomes.com",
+      "url": "http://billahomes.com/",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -21,7 +21,7 @@ const settings = {
               submenu: [
                 {
                   name: "ABOUT",
-                  link: "/about/",
+                  link: "/news/about/",
                 },
                 {
                   name: "CONTACT",
@@ -83,7 +83,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://billahomes.com",
+          "url": "http://billahomes.com/backend",
           "postTypes": [
             {
               type: "property", // type slug
