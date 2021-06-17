@@ -14,6 +14,7 @@ import FontFace from "./styles/font-face";
 import About from "./header/About"
 import Faqs from "./header/Faqs"
 import Agent from "./blog/agent"
+import Search from "./serch-result/search";
 
 
 // add cutom css by taimoor
@@ -28,7 +29,7 @@ import MainCss from "./styles/wp-site/index.css";
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
-const Theme = ({ state }) => {
+const Theme = ({ state }, props) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
 
@@ -38,7 +39,7 @@ const Theme = ({ state }) => {
     },
     colors: { ...state.theme.colors }
   });
-
+console.log(props);
   return (
     <ChakraProvider theme={{ ...overrides }}>
 
@@ -71,6 +72,7 @@ const Theme = ({ state }) => {
       >
         <Switch>
 
+          <Search when={data.link===`/all-properties/`} />
           <About when={data.link==='/about/'} />
           <Faqs when={data.link==='/faqs/'} />
 
