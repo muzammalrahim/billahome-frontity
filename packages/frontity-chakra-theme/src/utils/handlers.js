@@ -54,9 +54,9 @@ export const menuHandler = {
 
 // added by taimoor
 export const getAllpropertiesHandler = {
-  name: "properties",
+  name: "All properties",
   priority: 18,
-  pattern: "/properties",
+  pattern: "/properties/:page",
   func: async ({ route, params, state, libraries }) => {
     const { api } = libraries.source;
     const { id } = params;
@@ -65,7 +65,7 @@ export const getAllpropertiesHandler = {
     const response = await api.get({
       endpoint: "properties",
       params: {
-        per_page: 100, // To make sure we get all elements
+        per_page: 9, // To make sure we get all elements
         page: params.page,
         _embed: true,
       },

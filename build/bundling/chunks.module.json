@@ -1,25 +1,21 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "68ca3cf73b93c7d09034",
+  "hash": "c372c404f6effb06d1c6",
   "publicPath": "/static/",
   "outputPath": "D:\\Projects\\frontity project 2\\billahome-frontity\\build\\static",
   "assetsByChunkName": {
-    "home": [
-      "home.module.js",
-      "home.8c46e5a5daac0af0791d.hot-update.js"
-    ]
+    "home": "home.module.js"
   },
   "assets": [],
-  "filteredAssets": 11,
+  "filteredAssets": 9,
   "namedChunkGroups": {
     "home": {
       "chunks": [
         "home"
       ],
       "assets": [
-        "home.module.js",
-        "home.8c46e5a5daac0af0791d.hot-update.js"
+        "home.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -36,8 +32,7 @@
     {
       "id": "home",
       "files": [
-        "home.module.js",
-        "home.8c46e5a5daac0af0791d.hot-update.js"
+        "home.module.js"
       ]
     }
   ]

@@ -1,78 +1,74 @@
-
-.mmenu{
+.mmenu {
     margin-left: 200px;
-}
-
-.mmenu a {
+  }
+  
+  .mmenu a {
     color: #fff;
     text-decoration: none;
     transition: 0.15s;
     font-family: poppins;
     font-weight: 100;
-}
-.mmenu a:hover {
+  }
+  .mmenu a:hover {
     color: #006dcc;
-}
-.innermenu a {
+  }
+  .innermenu a {
     color: #333;
     text-decoration: none;
     transition: 0.15s;
-}
-.innermenu a:hover {
+  }
+  .innermenu a:hover {
     color: #fab93e;
-}
-
-ul.innermenu {
+  }
+  
+  ul.innermenu {
     padding-left: 0px;
-}
-
-ul {
+  }
+  
+  ul {
     list-style-type: none;
-
-}
-
-.login-register-nav{
+  }
+  
+  .login-register-nav {
     display: inline-flex;
     color: white;
-}
-
- .login-register-nav a {
+  }
+  
+  .login-register-nav a {
     padding: 10px 15px 10px 15px;
-}
-
- .btn-create-listing {
+  }
+  
+  .btn-create-listing {
     color: #ffffff;
     border: 1px solid #ffffff;
     background-color: #f9a200;
     border-radius: 5px;
-}
- .btn-create-listing:hover {
+  }
+  .btn-create-listing:hover {
     color: black;
     border: 1px solid #ffffff;
     background-color: #ffffff;
-}
-
-login-link:hover,:focus{
+  }
+  
+  login-link:hover,
+  :focus {
     color: #006dcc;
-}
-
-
-
-
-.footerLeftLinks  a{
-color: blanchedalmond;
-text-decoration: none;
-}
-
-.footer-copyrightstyle{
+  }
+  
+  .footerLeftLinks a {
     color: blanchedalmond;
-}
-
-.mainheader{
+    text-decoration: none;
+  }
+  
+  .footer-copyrightstyle {
+    color: blanchedalmond;
+  }
+  
+  .mainheader {
     position: relative;
-}
-
-.aboutImg{
+  }
+  
+  .aboutImg {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -80,42 +76,48 @@ text-decoration: none;
     left: 0;
     height: 278px;
     width: -webkit-fill-available;
-    
-   
-}
-
-.aboutImgbackground-overlay{
+  }
+  
+  .aboutImgbackground-overlay {
     background-color: #000000;
     opacity: 0.5;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-}
-
-a{
+  }
+  
+  a {
     /* color: #fab93e; */
-    text-decoration: none!important;
-}
-
-a:hover, a:visited, a:link, a:active
-{
-    text-decoration: none!important;
-}
-
-.elementor-accordion{
-   display: none;
-}
-
-.ddblock{
-    display: block;
-}
-.ddnone{
+    text-decoration: none !important;
+  }
+  
+  a:hover,
+  a:visited,
+  a:link,
+  a:active {
+    text-decoration: none !important;
+  }
+  
+  .elementor-accordion {
     display: none;
-}
-.login-register-navMain a{
-  color: white;
-}
-
-@media screen and (max-width: 1375px) {
+  }
+  
+  .ddblock {
+    display: block;
+  }
+  .ddnone {
+    display: none;
+  }
+  .login-register-navMain a {
+    color: white;
+  }
+  
+  @media screen and (max-width: 1375px) {
     .mmenu {
-        margin-left: 140px;
+      margin-left: 140px;
     }
+  }
+  
+  .buyPropertyNavigation{
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 40px;
   }

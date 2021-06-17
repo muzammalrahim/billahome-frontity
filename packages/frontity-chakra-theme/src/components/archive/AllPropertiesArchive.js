@@ -7,29 +7,44 @@ import { FeaturedPostSection } from "../featured-post/featured-post";
 import { formatPostData, splitPosts } from "../helpers";
 import AllProperty from "./allProperties";
 import SearchBar from "../header/SearchBar"
-import Pagination from "./pagination";
 
+import {ChevronLeftIcon} from "@chakra-ui/icons";
+import {ChevronRightIcon} from "@chakra-ui/icons";
 
 const AllPropertiesArchive = ({ state, actions, libraries })=>{
 
  const data = state.source.get(state.router.link);
 
   const [firstThreePosts, othersPosts] = splitPosts(state, data.items);
-  const [recentlyAddedItems, setRecentlyAdded] = useState([]);
-  const [pageRecentlyAdded, setPageRecentlyAdded] = useState(3633);
-  const [newItemAdded, setNewItemAdded] = useState([]);
+
+  const [currentlyAddedItemsFromState, setcurrentlyAddedItemsFromState] = useState([]);
+  const [NavigateToPageNo, setNavigateToPageNo] = useState(1);
+  
 
   let allProperties = '';
 
   useEffect( async() => {
-    await actions.source.fetch(`/properties`);
-    allProperties = state.source.get(`/properties`).items;
-    setRecentlyAdded(allProperties)
+    await actions.source.fetch(`/properties/${NavigateToPageNo}`);
+    allProperties = state.source.get(`/properties/${NavigateToPageNo}`).items;
+    setcurrentlyAddedItemsFromState(allProperties)
   }, [])
 
 
+  const PrevPage = async () => {
+    await actions.source.fetch(`/properties/${NavigateToPageNo}`);
+    allProperties = state.source.get(`/properties/${NavigateToPageNo}`).items;
+    setcurrentlyAddedItemsFromState(allProperties)
+    setNavigateToPageNo(NavigateToPageNo -1)
+  }
+  const NextPage = async () => {
+    await actions.source.fetch(`/properties/${NavigateToPageNo}`);
+    allProperties = state.source.get(`/properties/${NavigateToPageNo}`).items;
+    setcurrentlyAddedItemsFromState(allProperties)
+    setNavigateToPageNo(NavigateToPageNo +1)
+    
+  }
 
-console.log("all properties",recentlyAddedItems)
+console.log("all properties",currentlyAddedItemsFromState)
 return (
   <Box bg="accent.50" as="section">
    <SearchBar/>
@@ -46,7 +61,7 @@ return (
   spacing="20px"
 >
 
-  {recentlyAddedItems?.map(
+  {currentlyAddedItemsFromState?.map(
     ({ title, link, excerpt, featured_media, _embedded, property_meta }) => {
       return (<>
         <AllProperty
@@ -64,7 +79,10 @@ return (
     }
   )}
 </SimpleGrid>
-<Pagination mt="56px" />
+    <Center m="40px">    
+      <div className="buyPropertyNavigation" onClick={()=>PrevPage()}>  <ChevronLeftIcon m={2} w={10} h={10} color="#fab93e"/>  </div>
+      <div className="buyPropertyNavigation" onClick={()=>NextPage()}>  <ChevronRightIcon m={2} w={10} h={10} color="#fab93e"/>  </div>
+    </Center>
 </Box>
 </Box>
 )
