@@ -3,7 +3,7 @@ const settings = {
   "name": "home",
   "state": {
     "frontity": {
-      "url": "http://billahomes.com/",
+      "url": "http://billahomes.com/backend",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -21,7 +21,7 @@ const settings = {
               submenu: [
                 {
                   name: "ABOUT",
-                  link: "/news/about/",
+                  link: "/about/",
                 },
                 {
                   name: "CONTACT",

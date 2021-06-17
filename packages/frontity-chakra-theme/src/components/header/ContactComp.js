@@ -50,7 +50,7 @@ const ContactComp = ({ state, actions, libraries }) => {
       {/* Look at the settings to see if we should include the featured image */}
       <Csection bg="white" pb="80px" size="lg" class="bhoom">
         {post.featured_media != null && (
-          <FeaturedMedia id={post.featured_media.id} />
+          <FeaturedMedia id={post?.featured_media?.id} />
         )}
       
         {/* Render the content using the Html2React component so the HTML is processed

@@ -1,18 +1,17 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "e0e04429f4e4e81f44e6",
+  "hash": "00e16857df12dd78f585",
   "publicPath": "/static/",
   "outputPath": "E:\\Projects\\billahome-frontity\\build\\static",
   "assetsByChunkName": {
-    "archive": "archive.module.js",
     "home": [
       "home.module.js",
-      "home.dcd35aa8bf8467bf35fe.hot-update.js"
+      "home.c8627ecf0e47483491bd.hot-update.js"
     ]
   },
   "assets": [],
-  "filteredAssets": 12,
+  "filteredAssets": 11,
   "namedChunkGroups": {
     "home": {
       "chunks": [
@@ -20,18 +19,14 @@
       ],
       "assets": [
         "home.module.js",
-        "home.dcd35aa8bf8467bf35fe.hot-update.js"
+        "home.c8627ecf0e47483491bd.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "archive": {
-      "chunks": [
-        "archive"
-      ],
-      "assets": [
-        "archive.module.js"
-      ],
+      "chunks": [],
+      "assets": [],
       "children": {},
       "childAssets": {}
     }
@@ -39,16 +34,10 @@
   "generator": "loadable-components",
   "chunks": [
     {
-      "id": "archive",
-      "files": [
-        "archive.module.js"
-      ]
-    },
-    {
       "id": "home",
       "files": [
         "home.module.js",
-        "home.dcd35aa8bf8467bf35fe.hot-update.js"
+        "home.c8627ecf0e47483491bd.hot-update.js"
       ]
     }
   ]

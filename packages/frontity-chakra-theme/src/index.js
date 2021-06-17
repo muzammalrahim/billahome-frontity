@@ -3,7 +3,7 @@ import image from "@frontity/html2react/processors/image";
 import processors from "./components/styles/processors";
 // import { theme } from "@chakra-ui/react";
 
-import { menuHandler, propertiesHandler, mediaHandler } from "./utils/handlers";
+import { menuHandler, propertiesHandler, mediaHandler,getAllpropertiesHandler } from "./utils/handlers";
 
 
 const before = async ({ libraries, actions, state }) => {
@@ -16,6 +16,9 @@ const before = async ({ libraries, actions, state }) => {
   // libraries.source.handlers.push(getAllProperties);
   libraries.source.handlers.push(propertiesHandler);
   libraries.source.handlers.push(mediaHandler);
+  // push handler to get All-properties data
+  libraries.source.handlers.push(getAllpropertiesHandler);
+
   await actions.source.fetch(`/menu/${92}/`);
 
   // libraries.source.handlers.push(myCategoriesHandler);
