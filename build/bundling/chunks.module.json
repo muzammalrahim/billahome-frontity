@@ -1,0 +1,68 @@
+{
+  "errors": [],
+  "warnings": [],
+  "hash": "68b5faaab8c4893fc554",
+  "publicPath": "/static/",
+  "outputPath": "E:\\Projects\\billahome-frontity\\build\\static",
+  "assetsByChunkName": {
+    "archive": "archive.module.js",
+    "home": [
+      "home.module.js",
+      "home.fbd60154427d5e52bfe3.hot-update.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "archive.module.js",
+      "size": 116407,
+      "chunks": [
+        "archive"
+      ],
+      "chunkNames": [
+        "archive"
+      ],
+      "info": {},
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 11,
+  "namedChunkGroups": {
+    "home": {
+      "chunks": [
+        "home"
+      ],
+      "assets": [
+        "home.module.js",
+        "home.fbd60154427d5e52bfe3.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "archive": {
+      "chunks": [
+        "archive"
+      ],
+      "assets": [
+        "archive.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": "archive",
+      "files": [
+        "archive.module.js"
+      ]
+    },
+    {
+      "id": "home",
+      "files": [
+        "home.module.js",
+        "home.fbd60154427d5e52bfe3.hot-update.js"
+      ]
+    }
+  ]
+}
