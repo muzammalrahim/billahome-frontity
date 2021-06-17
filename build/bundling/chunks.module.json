@@ -1,31 +1,99 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "68b5faaab8c4893fc554",
+  "hash": "9fa43297f18745ff36ff",
   "publicPath": "/static/",
   "outputPath": "E:\\Projects\\billahome-frontity\\build\\static",
   "assetsByChunkName": {
     "archive": "archive.module.js",
     "home": [
       "home.module.js",
-      "home.fbd60154427d5e52bfe3.hot-update.js"
+      "home.68b5faaab8c4893fc554.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "archive.module.js",
-      "size": 116407,
-      "chunks": [
-        "archive"
-      ],
-      "chunkNames": [
-        "archive"
-      ],
-      "info": {},
+      "name": "fonts/KelsonSans-Bold.ttf",
+      "size": 67072,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/fonts/KelsonSans-Bold.ttf"
+      },
+      "emitted": true
+    },
+    {
+      "name": "fonts/KelsonSans-Bold.woff",
+      "size": 21548,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/fonts/KelsonSans-Bold.woff"
+      },
+      "emitted": true
+    },
+    {
+      "name": "fonts/Poppins-Bold.ttf",
+      "size": 149444,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/fonts/poppins-fonts/webfonts/Poppins-Bold.ttf"
+      },
+      "emitted": true
+    },
+    {
+      "name": "fonts/Poppins-Bold.woff",
+      "size": 106736,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/fonts/poppins-fonts/webfonts/Poppins-Bold.woff"
+      },
+      "emitted": true
+    },
+    {
+      "name": "fonts/tielabs-fonticon.ttf",
+      "size": 40460,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/fonts/tielabs-fonticon/tielabs-fonticon.ttf"
+      },
+      "emitted": true
+    },
+    {
+      "name": "fonts/tielabs-fonticon.woff",
+      "size": 40536,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/fonts/tielabs-fonticon/tielabs-fonticon.woff"
+      },
+      "emitted": true
+    },
+    {
+      "name": "images/pattern-tile-green.svg",
+      "size": 74553,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/assets/pattern-tile-green.svg"
+      },
+      "emitted": true
+    },
+    {
+      "name": "images/pattern-tile-light-fade.svg",
+      "size": 95727,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/frontity-chakra-theme/src/assets/pattern-tile-light-fade.svg"
+      },
       "emitted": true
     }
   ],
-  "filteredAssets": 11,
+  "filteredAssets": 4,
   "namedChunkGroups": {
     "home": {
       "chunks": [
@@ -33,7 +101,7 @@
       ],
       "assets": [
         "home.module.js",
-        "home.fbd60154427d5e52bfe3.hot-update.js"
+        "home.68b5faaab8c4893fc554.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -61,7 +129,7 @@
       "id": "home",
       "files": [
         "home.module.js",
-        "home.fbd60154427d5e52bfe3.hot-update.js"
+        "home.68b5faaab8c4893fc554.hot-update.js"
       ]
     }
   ]

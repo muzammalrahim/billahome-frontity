@@ -51,9 +51,7 @@ const Theme = ({ state }) => {
   <Global styles={css(baseTheme)} />
   <Global styles={css(helperCSS)} />
   <Global styles={css(faqsCss)} />
-
   <Global styles={css(contactCSS)} />
-
    <Global styles={css(MainCss)} />
 
    <FontFace />

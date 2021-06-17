@@ -681,3 +681,7 @@ select.selectpicker {
     width: 100%;
     float: none
 }
+
+.elementor-grid-itemMargin{
+    margin-left: 10px;
+}
