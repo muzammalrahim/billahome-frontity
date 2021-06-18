@@ -1,13 +1,13 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "318d4fcba146187cc399",
+  "hash": "af45e5759a9bc22c95d2",
   "publicPath": "/static/",
   "outputPath": "D:\\Projects\\frontity project 2\\billahome-frontity\\build\\static",
   "assetsByChunkName": {
     "home": [
       "home.module.js",
-      "home.25c72ae89ec396afd74c.hot-update.js"
+      "home.47f0a420d7e5f2796c37.hot-update.js"
     ]
   },
   "assets": [],
@@ -19,7 +19,7 @@
       ],
       "assets": [
         "home.module.js",
-        "home.25c72ae89ec396afd74c.hot-update.js"
+        "home.47f0a420d7e5f2796c37.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -37,7 +37,7 @@
       "id": "home",
       "files": [
         "home.module.js",
-        "home.25c72ae89ec396afd74c.hot-update.js"
+        "home.47f0a420d7e5f2796c37.hot-update.js"
       ]
     }
   ]
