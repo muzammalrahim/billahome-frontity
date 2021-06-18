@@ -17,12 +17,16 @@ const HomepageArchive = ({ state, libraries, actions }) => {
   const [recentlyAddedItems, setRecentlyAdded] = useState([]);
   const [pageRecentlyAdded, setPageRecentlyAdded] = useState(1);
   const [newItemAdded, setNewItemAdded] = useState([]);
+  const [homeContent, setHomeContent] =  useState({})
   const [ids, setIds] = useState([])
 
   let allProperties = '';
   useEffect( async() => {
     await actions.source.fetch(`/latest-properties/${pageRecentlyAdded}`);
-    allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
+    await actions.source.fetch(`/home-content`);
+    let allProperties = state.source.get(`/latest-properties/${pageRecentlyAdded}`).items;
+    let home = state.source.get("/home-content/");
+    console.log("home content data", home)
     setRecentlyAdded(allProperties)
     setNewItemAdded(allProperties);
     setPageRecentlyAdded(pageRecentlyAdded + 1)

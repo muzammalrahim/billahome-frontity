@@ -46,10 +46,10 @@ const ContactComp = ({ state, actions, libraries }) => {
     <Image className="aboutImg"  src="https://demo13.houzez.co/wp-content/uploads/2020/03/205.jpg" alt="Segun Adebayo" />
   </div>
      </div>*/}
-      {!postData.isPage && <PostProgressBar value={scroll} />}
+      {!postData?.isPage && <PostProgressBar value={scroll} />}
       {/* Look at the settings to see if we should include the featured image */}
       <Csection bg="white" pb="80px" size="lg" class="bhoom">
-        {post.featured_media != null && (
+        {post?.featured_media != null && (
           <FeaturedMedia id={post?.featured_media?.id} />
         )}
       

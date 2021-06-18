@@ -115,29 +115,28 @@ const Navigation = ({ menu,state,actions,...props }) =>
   return(
   <Box as="nav" width="100%" position="absolute" marginTop="30px" display={{ base: "none", lg: "block" }} {...props}>
     <SiteMenu>
-      {menu?.map(({name,link,submenu}) =>{
+      {items?.map(({title,url,child_items}) =>{
 
-          // let result = url.replace("http://billahome.com", "").replace('https://billahome.com', "").replace('http://billahomes.com/backend', "").replace('https://billahomes.com', "").replace('http://72.167.39.69', "");  
-        //  const urls = result
-          // {console.log('result', url)}
+          let result = url.replace("http://billahome.com", "").replace('https://billahome.com', "").replace('http://wp.billahomes.com', "").replace('https://billahomes.com', "").replace('http://72.167.39.69', "");  
+         const urls = result
         return (
         <div  class="mmenu" css={css`position:relative;` }>
-        <StyledMenu submenu={submenu}>
-        <SiteMenuItem  key={name} link={link}  onMouseLeave={()=>{setTimeout(() => {
+        <StyledMenu submenu={child_items}>
+        <SiteMenuItem  key={title} link={urls}  onMouseLeave={()=>{setTimeout(() => {
                                                                actions.theme.hideSubmenu()
                                                                                        }, 500)  
                                                                     }
                                                                 }>
-              {submenu && <p onPointerMove={()=>{actions.theme.showSubmenu(),actions.theme.showcurrentSubMenu(name)}} 
-                              >  {name} 
+              {child_items && <p onPointerMove={()=>{actions.theme.showSubmenu(),actions.theme.showcurrentSubMenu(title)}} 
+                              >  {title} 
                               <ChevronDownIcon mb={0} ml={1} w={6} h={6}/> </p>
-              } {!submenu  &&<p> {name}</p> }
+              } {!child_items  &&<p> {title}</p> }
                                                                          
 
         </SiteMenuItem>
        
-        <MenuItem2 submenu={submenu}>
-         <MenuItem  onMouseLeave={()=>{ actions.theme.shouldshowSubmenu("closed"), actions.theme.hideSubmenu()}} class="innermenu" key={name} css={css`
+        <MenuItem2 submenu={child_items}>
+         <MenuItem  onMouseLeave={()=>{ actions.theme.shouldshowSubmenu("closed"), actions.theme.hideSubmenu()}} class="innermenu" key={title} css={css`
         position: absolute;
         top: 47px;
         background: #000;
@@ -146,17 +145,17 @@ const Navigation = ({ menu,state,actions,...props }) =>
         `}>
         
 
-        {(state.theme.subMenu && submenu && state.theme.currentSubMenu === name) && submenu?.map(({name,link}) => {
-          // let result2 = url.replace("http://billahome.com", "").replace('https://billahome.com', '').replace('http://billahomes.com/backend', '').replace('https://billahomes.com', '').replace('http://72.167.39.69', '');  
-        //  const urls = result2
+        {(state.theme.subMenu && child_items && state.theme.currentSubMenu === title) && child_items?.map(({title,url}) => {
+          let result2 = url.replace("http://billahome.com", "").replace('https://billahome.com', '').replace('http://wp.billahomes.com', '').replace('https://billahomes.com', '').replace('http://72.167.39.69', '');  
+         const urls = result2
           return ( 
-            <SiteMenuItem2 key={name} link={link}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
+            <SiteMenuItem2 key={title} link={urls}   onMouseEnter={()=>{actions.theme.shouldshowSubmenu("open")}}>
                 <div  css={css` position : relative;
                                 padding: 10px 10px 10px 10px;
                              border-bottom: 1px solid #e6e6e6;
                            `}
                 >
-                        {name} 
+                        {title} 
                 </div>  
             </SiteMenuItem2>        
          );

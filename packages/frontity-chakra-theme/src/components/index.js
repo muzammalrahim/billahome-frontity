@@ -13,7 +13,7 @@ import Title from "./title";
 import FontFace from "./styles/font-face";
 import About from "./header/About"
 import Faqs from "./header/Faqs"
-import Agent from "./blog/agent"
+import Agent from "./billahome/agents"
 import ContactComp from "./header/ContactComp"
 import Search from "./serch-result/search";
 
@@ -43,7 +43,6 @@ const Theme = ({ state }) => {
     },
     colors: { ...state.theme.colors }
   });
-console.log("data log for urls", data)
   return (
     <ChakraProvider theme={{ ...overrides }}>
       <Global styles={css(bootstrap)} />
@@ -74,8 +73,9 @@ console.log("data log for urls", data)
         bg="#ffffff"
       >
         <Switch>
-          {/* <Search when={data.link === `/all-properties/`} /> */}
-          <About when={data.link === "/backend/about/"} />
+          <Agent when={data.link === '/agent' }/>
+          <Search when={data.link === `/search-results/`} />
+          <About when={data.link === "/about/"} />
           <Faqs when={data.link === "/faqs/"} />
           <ContactComp when={data.link === "/contact/"} />
           <Agent when={data.link === "/agents/"} />

@@ -36,15 +36,15 @@ const About = ({ state, actions, libraries }) => {
   const [ref, scroll] = useScrollProgress();
 
   // Load the post, but only if the data is ready.
-  if (!postData.isReady) return null;
+  if (!postData?.isReady) return null;
 
   return (
 <div class="tai">
        <SearchBar/>
-      {!postData.isPage && <PostProgressBar value={scroll} />}
+      {!postData?.isPage && <PostProgressBar value={scroll} />}
       {/* Look at the settings to see if we should include the featured image */}
       <Csection bg="white" pb="80px" mt="100px" size="lg" class="bhoom">
-        {post.featured_media != null && (
+        {post?.featured_media != null && (
           <FeaturedMedia id={post?.featured_media?.id} />
         )}
       

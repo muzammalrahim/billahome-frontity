@@ -3,7 +3,13 @@ import image from "@frontity/html2react/processors/image";
 import processors from "./components/styles/processors";
 // import { theme } from "@chakra-ui/react";
 
-import { menuHandler, propertiesHandler, mediaHandler,getAllpropertiesHandler } from "./utils/handlers";
+import {
+  menuHandler,
+  propertiesHandler,
+  mediaHandler,
+  getAllpropertiesHandler,
+  homecontentHandler,
+} from "./utils/handlers";
 
 
 const before = async ({ libraries, actions, state }) => {
@@ -12,7 +18,7 @@ const before = async ({ libraries, actions, state }) => {
 
   // Add handlers for both /players/ and /players/:name.
 
-   libraries.source.handlers.push(menuHandler);
+   libraries.source.handlers.push(menuHandler, homecontentHandler);
   // libraries.source.handlers.push(getAllProperties);
   libraries.source.handlers.push(propertiesHandler);
   libraries.source.handlers.push(mediaHandler);

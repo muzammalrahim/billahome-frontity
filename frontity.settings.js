@@ -2,8 +2,8 @@ const settings = {
   name: "home",
   state: {
     frontity: {
-      url: "http://billahomes.com/backend",
-      title: "Test Frontity Blog",
+      url: "http://wp.billahomes.com/",
+      title: "Real Estate Portal - for sale by owner home free listing service!",
       description: "WordPress installation for Frontity development",
     },
   },
@@ -81,7 +81,7 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          url: "http://billahomes.com/backend",
+          url: "http://wp.billahomes.com/",
           postTypes: [
             {
               type: "property", // type slug
